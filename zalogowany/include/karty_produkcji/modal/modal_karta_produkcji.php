@@ -4,12 +4,12 @@
     <div class="modal-content">
       <?php //`include 'include\ini_session_variables.php'; ?>
       <!-- ... -->
-      <div class="modal-header"> 
+      <div class="modal-header">
         <h5 class="modal-title text-warning" id="exampleModalLabel">
           <?php //echo $wiersz['nazwa_wytw']; ?>
-          Podgląd karty produkcji KOD:
+          Karta produkcji id = 
           <?php
-          echo $wiersz['kod_karty_prod'].' oraz id = '.$wiersz['id'];
+          echo $wiersz['id'].' nakład = '.$wiersz['ilosc_do_realizacji'].' termin realizacji = '.$wiersz['termin_realizacji'];
           ?>
           </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -17,11 +17,8 @@
         </button>
       </div>
       <?php
-      //$_GET['id'] = $wiersz['id'];
-  //  $_GET['zmienne'] = 'restart';
-  include 'include/karty_produkcji/include/ini_edi_variables.php';
-
-       include 'include/karta_produkcji/produktion_card.php';
+        include 'include/karty_produkcji/include/ini_edi_variables.php';
+        include 'include/karta_produkcji/produktion_card.php';
        ?>
 <!-- ... -->
       <div class="modal-body">
@@ -32,8 +29,7 @@
         <div class="container-fluid">
           <div class="row">
           <div class="col-md-12">
-<h4> <b>Jakie dane w podglądzie ?</b></h4>
-            <?php echo'<img src="../img/graphics/'.$wiersz['grafika'].'" class="img-fluid" alt="">';  ?>
+            <h4> <b>...</b></h4>
           </div>
           </div>
           <div class="row">
