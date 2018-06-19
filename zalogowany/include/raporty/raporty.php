@@ -1,0 +1,3 @@
+<?
+print 'plik RAPORTY.PHP';
+?>
