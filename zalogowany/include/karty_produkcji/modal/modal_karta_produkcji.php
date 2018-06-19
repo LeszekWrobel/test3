@@ -1,22 +1,15 @@
 <!-- Large modal -->
-
-<?php
-//echo'<div class="modal fade bd-example-modal-lg" id="#modal'.$wiersz['id'].'" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">';
- echo'<div class="modal fade bd-example-modal-lg" id="#'.$wiersz['id'].'" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">';
-//print '$wiersz['id']= '.$wiersz['id'].', $_POST['value'] = '.$_POST['value'].'';
-// $wiersz = $_GET['id'];
-// print wiersz;
-// $_GET['id'] = $wiersz;
-// $_GET['zmienne'] = 'restart';
-?>
+<?php echo'<div class="modal fade bd-example-modal-lg" id="'.$wiersz['id'].'" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">';?>
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+
       <?php //`include 'include\ini_session_variables.php'; ?>
-      <!-- ... -->
+
+      ...
       <div class="modal-header">
         <h5 class="modal-title text-warning" id="exampleModalLabel">
           <?php //echo $wiersz['nazwa_wytw']; ?>
-          Karta produkcji KOD:
+          Podgląd karty produkcji KOD:
           <?php
           echo $wiersz['kod_karty_prod'].' oraz id = '.$wiersz['id'];
           ?>
@@ -29,12 +22,12 @@
 
       </div>
       <?php
-
-       include 'include/karta_produkcji/produktion_card.php';
-
+      //$_GET['id'] = $wiersz['id'];
+  //  $_GET['zmienne'] = 'restart';
+      // include 'include/karta_produkcji/produktion_card.php';
        ?>
 
-<!-- ... -->
+...
 
       <div class="modal-body">
         <?php
@@ -44,8 +37,8 @@
         <div class="container-fluid">
           <div class="row">
           <div class="col-md-12">
-<!-- <h4> </h4> -->
-            <!-- <?php echo'<img src="../img/graphics/'.$wiersz['grafika'].'" class="img-fluid" alt="">';  ?> -->
+<h4> <b>Jakie dane w podglądzie ?</b></h4>
+            <?php echo'<img src="../img/graphics/'.$wiersz['grafika'].'" class="img-fluid" alt="">';  ?>
 
           </div>
 
