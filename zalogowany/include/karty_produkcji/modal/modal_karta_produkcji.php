@@ -19,7 +19,7 @@
       <?php
       //$_GET['id'] = $wiersz['id'];
   //  $_GET['zmienne'] = 'restart';
-      // include 'include/karta_produkcji/produktion_card.php';
+       include 'include/karta_produkcji/produktion_card.php';
        ?>
 <!-- ... -->
       <div class="modal-body">
