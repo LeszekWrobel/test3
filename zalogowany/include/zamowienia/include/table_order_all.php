@@ -42,5 +42,5 @@
 ?>
 			</div>
 <?php	}
-	$polaczenie->close();
+	//$polaczenie->close();
 ?>

@@ -17,9 +17,11 @@
         </button>
       </div>
       <?php
-      //$_GET['id'] = $wiersz['id'];
-  //  $_GET['zmienne'] = 'restart';
-      // include 'include/karta_produkcji/produktion_card.php';
+   //    $_GET['id'] = $wiersz['id'];
+   // $_GET['zmienne'] = 'restart';
+      include 'include/karty_produkcji/include/ini_edi_variables.php';
+      include 'include/karta_produkcji/produktion_card.php';
+
        ?>
 <!-- ... -->
       <div class="modal-body">
