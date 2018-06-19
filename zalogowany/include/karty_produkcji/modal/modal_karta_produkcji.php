@@ -4,7 +4,7 @@
     <div class="modal-content">
       <?php //`include 'include\ini_session_variables.php'; ?>
       <!-- ... -->
-      <div class="modal-header">
+      <div class="modal-header"> 
         <h5 class="modal-title text-warning" id="exampleModalLabel">
           <?php //echo $wiersz['nazwa_wytw']; ?>
           Podgląd karty produkcji KOD:
