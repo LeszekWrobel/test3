@@ -6,30 +6,24 @@
       <!-- ... -->
       <div class="modal-header">
         <h5 class="modal-title text-warning" id="exampleModalLabel">
-          <?php //echo $wiersz['nazwa_wytw']; ?>
-          Karta produkcji id = 
           <?php
-          echo $wiersz['id'].' nakład = '.$wiersz['ilosc_do_realizacji'].' termin realizacji = '.$wiersz['termin_realizacji'];
+          echo 'Termin realizacji = '.$wiersz['termin_realizacji'].' |  Nakład = '.$wiersz['ilosc_do_realizacji'];
           ?>
           </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <?php
-        include 'include/karty_produkcji/include/ini_edi_variables.php';
-        include 'include/karta_produkcji/produktion_card.php';
-       ?>
 <!-- ... -->
       <div class="modal-body">
-        <?php
-         echo '<div class="nazwa_wytw"> '.$wiersz['nazwa_wytw'].'</div>';
-         echo '<div class="nazwa_wzoru"> '.$wiersz['nazwa_wzoru'].'</div>';
- ?>
         <div class="container-fluid">
           <div class="row">
           <div class="col-md-12">
-            <h4> <b>...</b></h4>
+            <h4> <b>  </b></h4>
+            <?php
+            include 'include/karty_produkcji/include/ini_edi_variables.php';
+            include 'include/karta_produkcji/produktion_card.php';
+            ?>
           </div>
           </div>
           <div class="row">

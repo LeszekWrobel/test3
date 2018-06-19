@@ -21,19 +21,19 @@ if (isset($_POST['submit']) && ($_POST['submit'] !=''))
 			$_SESSION['roll_length'] = (((($_SESSION['number_of_teeth']*3.175)/$_SESSION['reps'])*$_SESSION['quantity_er'])/$_SESSION['ilosc_uzytkow'])/1000; // długość rolki obliczana ze wzoru.
 			$_SESSION['roll_length'] = round($_SESSION['roll_length'],2); // zaokrąglenie do 2 miejsca po przecinku
 		}
-		include 'form_paper_glue.php';
 		if (isset($_SESSION['direction_roll']) && ($_SESSION['direction_roll']) !='')
 			{
 				print 'wybrany nawój -- <img src = "include/karta_produkcji/nawoj_gif/'.$_SESSION['direction_roll'].'.gif">';
 			}
+			include 'form_paper_glue.php';
 	// }
 }
 else
 { // Form has not been submitted
-	include 'form_paper_glue.php';
 	if (isset($_SESSION['direction_roll']) && ($_SESSION['direction_roll']) !='')
 		{
 			print '<br />wybrany nawój - <img src = "include/karta_produkcji/nawoj_gif/'.$_SESSION['direction_roll'].'.gif">';
 		}
+		include 'form_paper_glue.php';
 }
 ?>
