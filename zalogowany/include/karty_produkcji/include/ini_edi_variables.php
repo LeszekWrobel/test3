@@ -31,13 +31,42 @@ $_SESSION['comments_to_order'] = $wiersz['uwagi'];
 $_SESSION['print_report'] = $wiersz['raport_druku'];
 $_SESSION['date_of_insertion'] = '';//  $wiersz['data_dodania'];
 $_SESSION['date_of_edition'] = '';//  $wiersz['data_aktualizacji'];
-$_SESSION['id_wykrojnik'] = $wiersz['id_wykrojnik'];
 //$_SESSION['id_autora'] = $wiersz['id_autora'];
 $_SESSION['number_of_rolls'] = '';//  $wiersz['ilosc_rolek'];//zerujemy a poniżej wyliczamy ze wzoru
 $_SESSION['actual_amount_of_material_used'] = '';//  $wiersz['rzeczywista_ilosc_mat'];
 $_SESSION['scrolled_amount'] = '';//  = $wiersz['ilosc_przewinieta'];
 $_SESSION['invoice_number'] = '';// $wiersz['nr_faktury'];
 $_SESSION['end_date'] = '';//$wiersz['end_date'];
+//odczytujemy dane wykrojnika
+$_SESSION['id_wykrojnik'] = $wiersz['id_wykrojnik'];
+//header ('Location: ?menuadmin=karta_produkcji&id_wykrojnika='.$wiersz['id_wykrojnik'].'');
+//$polaczenie->close();
+// require_once "../include/connect.php";
+// $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+//   if ($polaczenie->connect_errno!=0)
+//   {
+//     echo "Error: ".$polaczenie->connect_errno;
+//   }
+//   else
+//   {
+      $id=$_SESSION['id_wykrojnik'];
+//
+//SELECT * FROM pierwsza INNER JOIN druga WHERE id.pierwsza = id.druga
+    //  $rezultat =@$polaczenie->query("SELECT * FROM karty_produkcji INNER JOIN wykrojniki WHERE id=$id");
+    // while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
+    //   {
+    //      $_SESSION['dimension_x'] = $wiersz['dimension_x'];
+		// 		 $_SESSION['dimension_y'] = $wiersz['dimension_y'];
+		// 		 $_SESSION['form'] = $wiersz['form'];
+		// 		 $_SESSION['raw_material'] = $wiersz['raw_material'];
+		// 		 $_SESSION['number_of_teeth'] = $wiersz['number_of_teeth'];
+		// 		 $_SESSION['uzytkow'] = $wiersz['uzytkow'];;
+		// 		 $_SESSION['reps'] = $wiersz['reps'];
+		// 		 $_SESSION['radius'] = $wiersz['radius'];
+    //   }
+
+  // }
+  //	$polaczenie->close();
 // obliczamy i ustawiamy pozostałe zmienne:
 $_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
 $_SESSION['raw_material_lenght']=round($_SESSION['raw_material_lenght'],2);

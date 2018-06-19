@@ -21,6 +21,7 @@
           <div class="col-md-12">
             <h4> <b>  </b></h4>
             <?php
+            //include 'include/karty_produkcji/include/load_production_card.php';// kasowanie zmiennych i ładowanie danych starego zamówienia z bazy
             include 'include/karty_produkcji/include/ini_edi_variables.php';
             include 'include/karta_produkcji/produktion_card.php';
             ?>

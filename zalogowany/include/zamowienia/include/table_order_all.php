@@ -25,7 +25,10 @@
 				$rezultat =@$polaczenie->query("SELECT * FROM karty_produkcji WHERE kod_karty_prod LIKE '%$a%' AND nazwa_wytw LIKE '%$b%' AND nazwa_wzoru LIKE '%$c%' AND kod_ean LIKE '%$d%' ORDER BY termin_realizacji DESC");
 				while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
 					{
-						echo '<a role="button" class="btn btn-link" data-toggle="modal"  style="background-color: rgb(216, 254, 214)" data-target="#'.$wiersz['id'].'">';
+						// echo '<a href="?menuadmin=karta_produkcji&id='.$wiersz['id'].'&zmienne=restart"><div class="kod_karty_prod">';
+						// include 'include/color_order_date.php'; //koloraowanie zamówien w/g data
+						// echo'</div></a>';
+						echo '<a href="?menuadmin=karta_produkcji&id='.$wiersz['id_wykrojnik'].'&zmienne=restart" role="button" class="btn btn-link" data-toggle="modal"  style="background-color: rgb(216, 254, 214)" data-target="#'.$wiersz['id'].'">';
 							echo '<div class="kod_karty_prod">'; //btn-rgb(216, 254, 214)
 								include 'include/color_order_date.php'; //koloraowanie zamówien w/g data
 							echo'</div>	</a>';
@@ -42,5 +45,5 @@
 ?>
 			</div>
 <?php	}
-	$polaczenie->close();
+//	$polaczenie->close();
 ?>
