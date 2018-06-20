@@ -3,11 +3,6 @@
   <?php
   // include 'include/potw_karta_prod/necessary_variables.php';// sprawdzenie czy wszystkie wymagane pola są wypełnione
    include 'include/karty_produkcji/include/load_production_card.php';// kasowanie zmiennych i ładowanie danych starego zamówienia z bazy
-
-
-
-
-
   ?>
   <div class="container-fluid">
     <div class="row">
@@ -34,10 +29,10 @@
         					  </button></a>
                 </div>
                 <div class="row-md-10">
-                  <a href = "index.php?menuadmin=potw_karta_prod">
+                  <!-- <a href = "index.php?menuadmin=potw_karta_prod">
                     <button type="button" class="btn btn-primary btn-block">
                       Zamów
-        					  </button></a>
+        					  </button></a> -->
                 </div>
               </div>
             </div>
