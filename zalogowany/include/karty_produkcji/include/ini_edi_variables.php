@@ -1,4 +1,6 @@
 <?php
+print 'teraz się ładują dane';
+print 'Swiersz[id_wykrojnik]='.$wiersz['id_wykrojnik'];
 $_SESSION['id'] = $wiersz['id'];
 $_SESSION['kod_karty_prod'] = $wiersz['kod_karty_prod'];//   $wiersz['kod_karty_prod'];
 $_SESSION['nazwa_wytw'] = $wiersz['nazwa_wytw'];
@@ -49,24 +51,24 @@ $_SESSION['id_wykrojnik'] = $wiersz['id_wykrojnik'];
 //   }
 //   else
 //   {
-      $id=$_SESSION['id_wykrojnik'];
-//
-//SELECT * FROM pierwsza INNER JOIN druga WHERE id.pierwsza = id.druga
-    //  $rezultat =@$polaczenie->query("SELECT * FROM karty_produkcji INNER JOIN wykrojniki WHERE id=$id");
-    // while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
-    //   {
-    //      $_SESSION['dimension_x'] = $wiersz['dimension_x'];
-		// 		 $_SESSION['dimension_y'] = $wiersz['dimension_y'];
-		// 		 $_SESSION['form'] = $wiersz['form'];
-		// 		 $_SESSION['raw_material'] = $wiersz['raw_material'];
-		// 		 $_SESSION['number_of_teeth'] = $wiersz['number_of_teeth'];
-		// 		 $_SESSION['uzytkow'] = $wiersz['uzytkow'];;
-		// 		 $_SESSION['reps'] = $wiersz['reps'];
-		// 		 $_SESSION['radius'] = $wiersz['radius'];
-    //   }
 
+print 'Sid='.$id=$_SESSION['id_wykrojnik'];
+//SELECT * FROM pierwsza INNER JOIN druga WHERE id.pierwsza = id.druga
+     $rezultat =@$polaczenie->query("SELECT * FROM wykrojniki WHERE id=$id");
+    while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
+      {
+         $_SESSION['dimension_x'] = $wiersz['dimension_x'];
+				 $_SESSION['dimension_y'] = $wiersz['dimension_y'];
+				 $_SESSION['form'] = $wiersz['form'];
+				 $_SESSION['raw_material'] = $wiersz['raw_material'];
+				 $_SESSION['number_of_teeth'] = $wiersz['number_of_teeth'];
+				 $_SESSION['uzytkow'] = $wiersz['uzytkow'];;
+				 $_SESSION['reps'] = $wiersz['reps'];
+				 $_SESSION['radius'] = $wiersz['radius'];
+      }
+//print $_SESSION['dimension_y'].'lllllllllllooooppp';
   // }
-  //	$polaczenie->close();
+  // 	$polaczenie->close();
 // obliczamy i ustawiamy pozostałe zmienne:
 $_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
 $_SESSION['raw_material_lenght']=round($_SESSION['raw_material_lenght'],2);

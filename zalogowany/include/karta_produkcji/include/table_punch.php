@@ -8,13 +8,12 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 	}
 	else
 	{
-
 ?>
 				<div class="container">
 				<div class="grid-container5">
 				<!-- <div class="row">
 								<div class="col-md-5"> -->
-<?php 				echo '<div class="col"><b>Wymiar X mm</b></div>'; // nagłówki kolumn x5
+<?php			echo '<div class="col"><b>Wymiar X mm</b></div>'; // nagłówki kolumn x5
 					echo '<div class="col"><b>Wymiar Y mm</b></div>';
 					echo '<div class="col"><b>Ilość zębów</b></div>';
 					echo '<div class="col"><b>Użytków</b></div>';

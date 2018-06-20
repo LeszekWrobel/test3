@@ -27,6 +27,13 @@ if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GE
 				$_SESSION['ilosc_uzytkow'] = $wiersz['ilosc_uzytkow'];
 				$_SESSION['roll_length'] = $wiersz['dl_rolki'];
 				$_SESSION['kolor'] = explode( ",",$wiersz['kolory'] ); // tablica kolorów
+				$i = 0 ;	// licznik kolorów
+				foreach($_SESSION['kolor'] as $value) // wyświetlenie zapisanych w tablicy kolorów
+				{ if($value!='' ) // aby seperatory nie były wyświetlane gdy polo koloru jest puste
+				  {  $i++;  }
+				}
+				$_SESSION['ilosc_kolorow'] = $i ; // zapisanie ilości kolorów do sesji
+				//print $_SESSION['ilosc_kolorow'];
 				//$_POST['kolor'] = '';
 				$_SESSION['direction_roll'] = $wiersz['nawoj'];
 				// $_SESSION['wymiar_x_od'] = '';
@@ -52,17 +59,17 @@ if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GE
 				$_SESSION['scrolled_amount'] = '';//  = $wiersz['ilosc_przewinieta'];
 				$_SESSION['invoice_number'] = '';// $wiersz['nr_faktury'];
 				$_SESSION['end_date'] = '';//$wiersz['end_date'];
+				$_SESSION['date_of_insertion'] = date('Y-m-d'); //date dodania ustawiamy na aktualną date('Y-m-d');
+				$_SESSION['ip_autor'] = $_SERVER['REMOTE_ADDR'];//identyfikacja ip
+			//	header ('Location: ?menuadmin=karta_produkcji&id_wykrojnika='.$wiersz['id_wykrojnik'].'');
 
 				// obliczamy i ustawiamy pozostałe zmienne:
-				$_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
-				$_SESSION['raw_material_lenght']=round($_SESSION['raw_material_lenght'],2);
-				$_SESSION['number_of_rolls']=$_SESSION['circulation']*1000/$_SESSION['quantity_er'];   //ilość rolek
-				$_SESSION['number_of_rolls']=ceil($_SESSION['number_of_rolls']);
-				$_SESSION['date_of_insertion'] = date('Y-m-d'); //date dodania ustawiamy na aktualną date('Y-m-d');
+				// $_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
+				// $_SESSION['raw_material_lenght']=round($_SESSION['raw_material_lenght'],2);
+				// $_SESSION['number_of_rolls']=$_SESSION['circulation']*1000/$_SESSION['quantity_er'];   //ilość rolek
+				// $_SESSION['number_of_rolls']=ceil($_SESSION['number_of_rolls']);
 				//$_SESSION['date_of_edition'] = '';
 				//$_SESSION['id_autora'] ;
-				$_SESSION['ip_autor'] = $_SERVER['REMOTE_ADDR'];//identyfikacja ip
-				header ('Location: ?menuadmin=karta_produkcji&id_wykrojnika='.$wiersz['id_wykrojnik'].'');
 
 				//$_GET['id_wykrojnika']
 			}

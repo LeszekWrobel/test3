@@ -105,7 +105,7 @@ if ((empty($login)) OR (empty($haslo)))
 							 include('include/karta_produkcji/produktion_card.php');
 							}
 							break;
-							case 'podgl_edycja_karta_produkcji':
+							case 'podgl_edycja_kp':
 							 {
 								include('include/karta_produkcji/podgl_edycja/pod_edy_prod_card.php');
 							 }

@@ -28,7 +28,7 @@
 						// echo '<a href="?menuadmin=karta_produkcji&id='.$wiersz['id'].'&zmienne=restart"><div class="kod_karty_prod">';
 						// include 'include/color_order_date.php'; //koloraowanie zamówien w/g data
 						// echo'</div></a>';
-						echo '<a href="?menuadmin=karta_produkcji&id='.$wiersz['id_wykrojnik'].'&zmienne=restart" role="button" class="btn btn-link" data-toggle="modal"  style="background-color: rgb(216, 254, 214)" data-target="#'.$wiersz['id'].'">';
+						echo '<a value="'.$wiersz['id'].'" role="button" class="btn btn-link" data-toggle="modal"  style="background-color: rgb(216, 254, 214)" data-target="#modal_window">';
 							echo '<div class="kod_karty_prod">'; //btn-rgb(216, 254, 214)
 								include 'include/color_order_date.php'; //koloraowanie zamówien w/g data
 							echo'</div>	</a>';
@@ -40,8 +40,8 @@
 						echo '<div class="rzeczywista_ilosc_mat"> '.$wiersz['rzeczywista_ilosc_mat'].'</div>';
 						echo '<div class="termin_realizacji"> '.$wiersz['termin_realizacji'].'</div>';
 						echo '<div class="uwagi"> '.$wiersz['uwagi'].'</div>';
-						include 'include/karty_produkcji/modal/modal_karta_produkcji.php';
 					}
+					include 'include/karty_produkcji/modal/modal_karta_produkcji.php';
 ?>
 			</div>
 <?php	}
