@@ -3,11 +3,12 @@
 // {
 // 	include 'include/ini_session_variables.php'; //czyszczenie zmiennych sesyjnych
 // }
-if (isset($_GET['mode']) && $_GET['mode'] ==='edit'){$_SESSION['mode'] = 'edit';} if ($_SESSION['mode']==='edit')
-	{
-		$yes='<small>Tryb podglądu i edycji</small>';
-		include $katalogskr.'/include/yes.html.php';
-	}else{}
+ if (isset($_GET['mode']) && $_GET['mode'] === 'edit'){$_SESSION['mode'] = 'edit';} 
+//if ($_SESSION['mode']==='edit')
+// 	{
+// 		$yes='<small>Tryb podglądu i edycji</small>';
+// 		include $katalogskr.'/include/yes.html.php';
+// 	}else{}
 if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GET['zmienne'] === 'restart')
 	{
 		// nadpisanie zmiennych sesyjnych zmiennymi z bazy po kliknięciu na numer karty produkcji w celu wykonania kopi zamówienia jako nowego do realizcji

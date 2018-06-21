@@ -78,7 +78,7 @@
             </div>
           </div>
           <div class="col-md-4 offset-md-4 mt-3 mb-2">
-             <input id="submit" class="btn btn-danger btn-block" name="submit" type="submit" value=" Zmień, Przelicz i Zapisz ">
+             <input id="submit" class="btn btn-danger btn-block " name="submit" type="submit" value=" Zmień, Przelicz i Zapisz ">
             <!-- <input id="submit" class="btn btn-danger btn-block" data-toggle="modal" data-target="#zpiz" value=" Zmień, Przelicz i Zapisz "> -->
             <!-- Button trigger modal -->
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#zpiz">
@@ -89,7 +89,7 @@
           <?php if ($_SESSION['mode']==='edit')
             {  ?>
               <a href = "index.php?menuadmin=potw_karta_prod">
-                <button type="button" class="btn btn-primary btn-block">Zapisz zmiany</button></a>
+                <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="right" title="UWAGA !!! Przed zatwierdzeniem pamiętaj o zapisaniu i przeliczeniu powyższym. czerwonym przyciskiem">Zapisz zmiany</button></a>
                 <!-- powyżej button w trybie tworzenia nwej karty produkcji z katalogu "zamowienia" -->
       <?php }else{  ?>
           <a href = "index.php?menuadmin=potw_karta_prod">

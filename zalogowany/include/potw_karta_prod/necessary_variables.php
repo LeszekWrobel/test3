@@ -98,7 +98,7 @@ if (isset($_POST['submit']) && $_POST['submit'] ===" Zmień, Przelicz i Zapisz "
               include $katalogskr.'/include/error.html.php';
             }
           }
-      }
+      }else{}
       $yes='Wprowadzone dane zostały zapisane i przeliczone';
       include $katalogskr.'/include/yes.html.php';
   }

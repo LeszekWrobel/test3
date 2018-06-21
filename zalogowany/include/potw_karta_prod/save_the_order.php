@@ -1,5 +1,7 @@
 <?php
-if (isset($_POST['submit']) && ($_POST['submit']) =='Potwierdz') 
+include 'include/karty_produkcji/include/load_production_card.php';// kasowanie zmiennych i ładowanie danych starego zamówienia z bazy
+
+if (isset($_POST['submit']) && ($_POST['submit']) =='Potwierdz')
 { // Form has been submitted
 	if ($_POST['circulation']!='') {$_SESSION['circulation'] = $_POST['circulation'];}
 	if ($_POST['date_of_completion']!='') {$_SESSION['date_of_completion'] = $_POST['date_of_completion'];}
