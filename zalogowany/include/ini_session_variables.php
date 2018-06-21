@@ -50,4 +50,5 @@ $_SESSION['search_kod_ean'] = '' ;  //zmienne wyszukiwarek kasowane są w progra
 // $_POST['uzytkow'] = '' ;//dla prawidłowego działania necessary_variables.php
 // $_POST['reps'] = '' ; //dla prawidłowego działania necessary_variables.php
 // $_POST['direction_roll'] = '' ; //dla prawidłowego działania necessary_variables.php
+$_SESSION['mode'] = '';
 ?>

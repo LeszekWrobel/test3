@@ -43,6 +43,7 @@
 						echo '<div class="uwagi"> '.$wiersz['uwagi'].'</div>';
 					}
 				//	include 'include/karty_produkcji/modal/modal_karta_produkcji.php';
+				$_SESSION['mode']='edit';
 ?>
 			</div>
 <?php	}

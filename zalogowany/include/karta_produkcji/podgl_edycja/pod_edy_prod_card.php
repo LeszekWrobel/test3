@@ -1,7 +1,7 @@
 <title>Podgląd i edycja karty produkcji</title>
   <!-- Image and text -->
   <?php
-  // include 'include/potw_karta_prod/necessary_variables.php';// sprawdzenie czy wszystkie wymagane pola są wypełnione
+   include 'include/potw_karta_prod/necessary_variables.php';// sprawdzenie czy wszystkie wymagane pola są wypełnione
    include 'include/karty_produkcji/include/load_production_card.php';// kasowanie zmiennych i ładowanie danych starego zamówienia z bazy
   ?>
   <div class="container-fluid">
