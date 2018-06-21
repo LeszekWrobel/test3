@@ -79,15 +79,16 @@
             </div>
           </div>
           <div class="col-md-4 offset-md-4 mt-3 mb-3">
-            <input id="submit" class="btn btn-danger btn-block" name="submit" type="submit" data-toggle="modal" data-target="#zpiz" value=" Zmień, Przelicz i Zapisz ">
+             <input id="submit" class="btn btn-danger btn-block" name="submit" type="submit" value=" Zmień, Przelicz i Zapisz ">
+            <input id="submit" class="btn btn-danger btn-block" data-toggle="modal" data-target="#zpiz" value=" Zmień, Przelicz i Zapisz ">
             <!-- Button trigger modal -->
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#zpiz">
               Launch demo modal
             </button> -->
 
           </div>
-          <?php include 'include/karty_produkcji/modal/modal_karta_produkcji.php'; ?>
           </form>
         </div>
     </div>
   </div>
+  <?php include 'include/karta_produkcji/modal/modal_karta_produkcji.php'; ?>

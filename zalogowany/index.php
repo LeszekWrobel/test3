@@ -39,6 +39,12 @@ if ((empty($login)) OR (empty($haslo)))
 				<?php include '../include/nav.php'; ?>
 			</div>
  		 	<div id="ogloszenia" >
+				<?php if ($_SESSION['mode']==='edit')
+					{
+						$yes='<small>Tryb podglądu i edycji</small>';
+						include $katalogskr.'/include/yes.html.php';
+					}else{}
+					?>
 			<?php
 				if (isset($_GET['menuadmin']))
 				//{$op =  $_GET['menuadmin'];}

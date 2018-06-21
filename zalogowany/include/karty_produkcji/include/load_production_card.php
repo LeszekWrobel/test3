@@ -1,7 +1,11 @@
 <?php
-// nadpisanie zmiennych sesyjnych zmiennymi z bazy po kliknięciu na numer karty produkcji w celu wykonania kopi zamówienia jako nowego do realizcji
+if(isset($_GET['zmienne_ini']) && $_GET['zmienne_ini'] === 'clear')
+{
+	include 'include/ini_session_variables.php'; //czyszczenie zmiennych sesyjnych
+}
 if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GET['zmienne'] === 'restart')
 	{
+		// nadpisanie zmiennych sesyjnych zmiennymi z bazy po kliknięciu na numer karty produkcji w celu wykonania kopi zamówienia jako nowego do realizcji
 		require_once "../include/connect.php";
 		$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 	if ($polaczenie->connect_errno!=0)
