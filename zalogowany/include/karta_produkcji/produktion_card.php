@@ -27,7 +27,7 @@
             <div class="col-md-3 text-center">
               <?php include 'include/karta_produkcji/include/search_prod.php'; ?>
               <div class="col-md-10 offset-md-1 mt-2">
-                <div class="row-md-10 mb-2">
+                <div class="row-md-10 mb-0">
                   <a href = "index.php?menuadmin=wykrojniki">
                     <button type="button" class="btn btn-success btn-block">
                      Wykrojnik wybierz
@@ -45,7 +45,7 @@
               <div class="row pr-5 mr-3">
                 <div class="col-md-12">
                   <div id="graphics">
-                    <?php echo '<img style height="360px" src="'.$link.'/'.$katalog.'/img/graphics/'.$_SESSION['link_img'].'">';?>
+                    <?php echo '<img style height="330px" src="'.$link.'/'.$katalog.'/img/graphics/'.$_SESSION['link_img'].'">';?>
                   </div>
                 </div>
               </div>
@@ -85,18 +85,7 @@
               Launch demo modal
             </button> -->
           </div>
-          <div class="col-md-2 offset-md-5">
-          <?php if ($_SESSION['mode']==='edit')
-            {  ?>
-              <a href = "index.php?menuadmin=potw_karta_prod">
-                <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="right" title="UWAGA !!! Przed zatwierdzeniem pamiętaj o zapisaniu i przeliczeniu powyższym. czerwonym przyciskiem">Zapisz zmiany</button></a>
-                <!-- powyżej button w trybie tworzenia nwej karty produkcji z katalogu "zamowienia" -->
-      <?php }else{  ?>
-          <a href = "index.php?menuadmin=potw_karta_prod">
-              <button type="button" class="btn btn-primary btn-block">Zamów</button></a>
-              <!-- powyżej button w trybie tworzenia nwej karty produkcji z "list_of_produktion_cards.php" -->
-          <?php  }    ?>
-          </div>
+
           </form>
         </div>
     </div>

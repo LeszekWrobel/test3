@@ -1,5 +1,6 @@
 <?php
 print ' LISTA KART PRODUKCYJNYCH <br />';
-echo '<a href = "index.php?menuadmin=karta_produkcji&zmienne=restart&zmienne_ini=clear"><img src="'.$link.'/'.$katalog.'/img/button/utw_karte_prod.png" ></a>';
+echo '<a class="btn btn-primary mr-2" href="index.php?menuadmin=karta_produkcji&zmienne_ini=clear" role="button">Czyść kartę</a>';
+echo '<a class="btn btn-primary" href = "index.php?menuadmin=karta_produkcji&zmienne=restart" role="button">Edytuj kartę</a>';
 include ('include/table_produktion_card_list.php');
 ?>

@@ -98,8 +98,21 @@ if (isset($_POST['submit']) && $_POST['submit'] ===" Zmień, Przelicz i Zapisz "
               include $katalogskr.'/include/error.html.php';
             }
           }
-      }else{}
-      $yes='Wprowadzone dane zostały zapisane i przeliczone';
-      include $katalogskr.'/include/yes.html.php';
+      }else{//button zatwierdzający dane do zamówienia
+        $yes='Wprowadzone dane zostały zapisane i przeliczone';
+        include $katalogskr.'/include/yes.html.php';?>
+        <div class="col-md-2 offset-md-5 mb-4">
+        <?php if ($_SESSION['mode']==='edit')
+          {  ?>
+            <a href = "index.php?menuadmin=potw_karta_prod">
+              <button type="button" class="btn btn-primary btn-block"  title="Przycisk zakończy procedurę w tym oknie">Zapisz zmiany</button></a>
+              <!-- powyżej button w trybie tworzenia nwej karty produkcji z katalogu "zamowienia" -->
+    <?php }else{  ?>
+        <a href = "index.php?menuadmin=potw_karta_prod">
+            <button type="button" class="btn btn-primary btn-block">Zamów</button></a>
+            <!-- powyżej button w trybie tworzenia nwej karty produkcji z "list_of_produktion_cards.php" -->
+        <?php  }    ?>
+        </div>
+    <?php  }
   }
 ?>

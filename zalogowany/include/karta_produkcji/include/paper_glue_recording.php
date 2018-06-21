@@ -32,7 +32,7 @@ else
 { // Form has not been submitted
 	if (isset($_SESSION['direction_roll']) && ($_SESSION['direction_roll']) !='')
 		{
-			print '<br />wybrany nawój - <img src = "include/karta_produkcji/nawoj_gif/'.$_SESSION['direction_roll'].'.gif">';
+			print 'wybrany nawój - <img src = "include/karta_produkcji/nawoj_gif/'.$_SESSION['direction_roll'].'.gif">';
 		}
 		include 'form_paper_glue.php';
 }

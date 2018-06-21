@@ -1,9 +1,9 @@
 <?php
-// if(isset($_GET['zmienne_ini']) && $_GET['zmienne_ini'] === 'clear')
-// {
-// 	include 'include/ini_session_variables.php'; //czyszczenie zmiennych sesyjnych
-// }
- if (isset($_GET['mode']) && $_GET['mode'] === 'edit'){$_SESSION['mode'] = 'edit';} 
+ if(isset($_GET['zmienne_ini']) && $_GET['zmienne_ini'] === 'clear')
+{
+	include 'include/ini_session_variables.php'; //czyszczenie zmiennych sesyjnych
+}
+ if (isset($_GET['mode']) && $_GET['mode'] === 'edit'){$_SESSION['mode'] = 'edit';}
 //if ($_SESSION['mode']==='edit')
 // 	{
 // 		$yes='<small>Tryb podglądu i edycji</small>';
