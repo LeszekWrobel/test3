@@ -1,0 +1,3 @@
+<?
+print 'plik KALENDARZ.PHP';
+?>

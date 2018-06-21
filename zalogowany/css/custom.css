@@ -1,0 +1,30 @@
+a {
+  color: white;
+}
+a:hover{
+  color: white;
+  text-decoration: none;
+}
+/* .container-fluid{
+  margin-top: 5%;
+} */
+.btn{
+  /* font-size: 125%; */
+  font-weight: 800;
+}
+.custom-control {
+  display: initial;
+}
+.bd-callout-warning {
+  border-left-color: #f0ad4e;
+}
+/* .bd-callout {
+    padding: 1.25rem;
+    /* margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 2px solid #eee;
+        /* border-left-width: 1px;
+        border-left-color: rgb(238, 238, 238);
+    border-left-width: .45rem;
+    border-radius: .25rem;
+} */
