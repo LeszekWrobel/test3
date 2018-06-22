@@ -1,11 +1,15 @@
 <?php
-if  (isset($_POST['submit']) && $_POST['submit'] =='Tak')
-	{
+ if  (isset($_POST['submit']) && $_POST['submit'] == $_POST['id'])
+ 	{
 		$id_zamowienia = $_POST['id'];
+		//$id_zamowienia = $wiersz['id'];
+
 		$actual_amount_of_material_used = $_POST['actual_amount_of_material_used'];
 		$_POST['actual_amount_of_material_used'] = strip_tags(trim($_POST['actual_amount_of_material_used']));
 		$rzecz_ilosc_mat = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_POST['actual_amount_of_material_used']);
 		$sprawdznr = '/^[0-9]{2,6}$/D';  // cyfry od 0 do 9 , min 1 znaków max 6
+		print '$_POST[id]= '.$id_zamowienia.'<br>$_POST[submit]= '.$_POST['submit'].'<br>$_POST[actual_amount_of_material_used]= '.$rzecz_ilosc_mat;
+		//print '<br>$wiersz[id] = '.$wiersz['id'];
 			if(!(preg_match ($sprawdznr,$rzecz_ilosc_mat)))
 			{
 				$error = 'Wypełnij poprawnie pole "Rzeczywista ilość materiału."';
@@ -28,5 +32,5 @@ if  (isset($_POST['submit']) && $_POST['submit'] =='Tak')
 				$polaczenie->close();
 
 			}
-	}
+	 }
 ?>
