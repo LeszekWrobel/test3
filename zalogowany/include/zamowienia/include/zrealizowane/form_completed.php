@@ -24,8 +24,6 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 					echo '<div class="kolory"><b>Ilość przewinięta</b></div>';
 					echo '<div class="ilosc_zebow"><b>Faktura</b></div>';
 					echo '<div class="rzecz_ilosc_mat"><b>Faktura</b></div>';
-
-
 					$rezultat = @$polaczenie->query("SELECT * FROM karty_produkcji WHERE ilosc_przewinieta != 0 ORDER BY termin_realizacji DESC");
 					$nr_kal = 1; //inicjacja nr kalendarza
 					while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
@@ -37,7 +35,6 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 							echo '<div class="nazwa_wzoru"> '.$wiersz['nazwa_wzoru'].'</div>';
 							echo '<div class="ilosc_do_realizacji"> '.$wiersz['ilosc_do_realizacji'].'</div>';
 							echo '<div class="material"> '.$wiersz['material'].'</div>';
-
 							$end_date = strtotime($wiersz['end_date']);
 							$time = date("H:i", $end_date);
 							$date = date("Y-m-d",$end_date);

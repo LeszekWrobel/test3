@@ -58,7 +58,6 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 									echo $tak;
 									echo '</div>';
 									echo '</form>';
-
 						}
 				?>
 			</div>

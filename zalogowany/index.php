@@ -34,8 +34,6 @@ if ((empty($login)) OR (empty($haslo)))
 		// - - - - tylko dla zalogowanych START  - - - -
 ?>
 			<div id="menuadmin">
-				<?php //include '../include/baner.php'; ?>
-				<?php //include '../include/menuadmin.php';?>
 				<?php include '../include/nav.php'; ?>
 			</div>
  		 	<div id="ogloszenia" >
@@ -58,7 +56,6 @@ if ((empty($login)) OR (empty($haslo)))
 <?php
 						include('include/zamowienia/menu_zamowienia.php');
 						include 'include/zamowienia/include/table_order_all.php';
-						include('include/zamowienia/zamowienia.php');
 					}
 					break;
 							case 'zamowienia_wszystkie':
@@ -76,9 +73,8 @@ if ((empty($login)) OR (empty($haslo)))
 							break;
 										case 'zamowienia_drukarki_edycja':
 								   {
-										//include('include/zamowienia/menu_zamowienia.php');
 										include('include/zamowienia/include/drukarki/save_table_order_printers.php');
-									}
+									 }
 									break;
 							case 'zamowienia_przewijarki':
 						   {

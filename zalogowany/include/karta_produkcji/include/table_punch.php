@@ -18,7 +18,7 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 					echo '<div class="col"><b>Ilość zębów</b></div>';
 					echo '<div class="col"><b>Użytków</b></div>';
 					echo '<div class="col"><b>Powtórzeń</b></div>';
-					if(isset($_GET['id_wykrojnik'])) // sprawdza czy dane o wykrojniku są importowane z zakładki wykrojniki
+					if(isset($_GET['id_wykrojnik']) && $_GET['id_wykrojnik'] != '') // sprawdza czy dane o wykrojniku są importowane z zakładki wykrojniki
 						{	$id_wykrojnik = $_GET['id_wykrojnik']; // odczytujemy id wykrojnika
 
 							$rezultat = @$polaczenie->query("SELECT * FROM wykrojniki WHERE id=$id_wykrojnik"); //
