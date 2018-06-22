@@ -1,7 +1,6 @@
 <?php
 if  (isset($_POST['submit_invoice']) && $_POST['submit_invoice'] =='Tak')
 	{
-
 	$id_zamowienia = $_POST['id'];
 		if (isset($_POST['invoice_number']) && isset($_POST['id']) && ($_POST['invoice_number'] != ''))
 			{
@@ -14,8 +13,6 @@ if  (isset($_POST['submit_invoice']) && $_POST['submit_invoice'] =='Tak')
 				{
 					$error = 'Wypełnij poprawnie pole "Faktura".';
 					include $katalogskr.'/include/error.html.php';
-					//include 'form_completed.php'
-					//exit;
 				} else
 				{
 					require_once "../include/connect.php";
@@ -37,28 +34,4 @@ if  (isset($_POST['submit_invoice']) && $_POST['submit_invoice'] =='Tak')
 				include $katalogskr.'/include/error.html.php';
 			}
 	}
-/*if  (isset($_POST['submit_date']) && $_POST['submit_date'] =='Tak')
-	{
-		$id_zamowienia = $_POST['id'];
-			if (isset($_POST['end_date']) && isset($_POST['id']) && ($_POST['end_date'] != '0') && ($_POST['end_date'] != '') && ($_POST['id'] != ''))
-			{
-				$end_date = $_POST['end_date'];
-				require_once "../include/connect.php";
-				$polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);//
-				if ($polaczenie->query("UPDATE karty_produkcji SET end_date='$end_date' WHERE id=$id_zamowienia"))
-				{
-					$yes = 'Data realizacji zamówienia została potwierdzona.';
-					include $katalogskr.'/include/yes.html.php';
-				}
-					else
-				{
-					throw new Exception($polaczenie->error);
-				}
-			}
-			else
-			{
-				$error = 'Sprawdź pole "Data realizacji".';
-				include $katalogskr.'/include/error.html.php';
-			}
-	}*/
 ?>

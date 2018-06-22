@@ -90,4 +90,3 @@
         </div>
     </div>
   </div>
-  <?php include 'include/karta_produkcji/modal/modal_karta_produkcji.php'; ?>

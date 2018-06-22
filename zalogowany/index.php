@@ -65,12 +65,7 @@ if ((empty($login)) OR (empty($haslo)))
 						   {
 								include('include/zamowienia/menu_zamowienia.php');
 								include('include/zamowienia/index.php');
-								//include 'include/zamowienia/include/table_order_grid.php';
 								include 'include/zamowienia/include/table_order_all.php';
-
-								//include 'include/zamowienia/include/table_order_punch.php';
-								//include 'include/zamowienia/include/table_order_punch_grid.php';
-
 							}
 							break;
 							case 'zamowienia_drukarki':

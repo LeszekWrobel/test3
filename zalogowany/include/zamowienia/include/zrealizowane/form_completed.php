@@ -48,23 +48,12 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 								}else
 								{
 									$tak = '';
-									// $tak = '<input id="submit" name="submit_date" type="submit" value="Tak"></input>';
 									 echo '<div class="end_date">';
-									// echo '<form method="post" action="">';
-									// echo '<input name="id" type="hidden" value="'.$wiersz['id'].'">';
-									// echo'<input name="end_date" id="indexjQueryDatePicker'.$nr_kal.'" style="" size="8"  placeholder=" '.$_SESSION['end_date'].'">';
 									 echo '</div>'; // wpisuje drukarz
 								}
-									//$wiersz=$wiersz['end_date'];
-									//$data=date($wiersz);
-									//$data = date("Y-m-d", $wiersz['end_date']);
-									//$czas = date("H:i",  $wiersz['end_date']);
-									//$czas=date("H:i");
-									//echo '<div class="material"> '.$wiersz['end_date'].'</div>';
 									echo '<div class="zrealizowane">';
 									echo $tak;
 									echo '</div>';
-									//echo '</form>';
 							$nr_kal = $nr_kal + 1; //inkrementacja kalendarza
 							echo '<div class="zalecana_szer_mat"> '.$wiersz['zalecana_szer_mat'].'</div>';
 							echo '<div class="dlugosc_materialu"> '.$wiersz['rzeczywista_ilosc_mat'].'</div>';
@@ -88,7 +77,6 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 									echo $tak;
 									echo '</div>';
 									echo '</form>';
-
 						}
 				?>
 			</div>
