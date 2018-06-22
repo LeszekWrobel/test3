@@ -43,7 +43,7 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 							print ' | ';
 							echo '</div>';
 							echo '<div class="ilosc_zebow"> '.$wiersz['ilosc_zebow'].'</div>';
-							$tak = '';
+							$tak = ''; 
 							if($wiersz['rzeczywista_ilosc_mat']!='0')
 								{
 									echo '<div class="rzecz_ilosc_mat"> '.$wiersz['rzeczywista_ilosc_mat'].'</div>'; // odczyt z bazy wpisane przez drukarza
