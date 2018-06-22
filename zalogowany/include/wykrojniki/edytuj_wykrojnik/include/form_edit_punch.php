@@ -1,7 +1,7 @@
-<?php	
-if(isset($_GET['id_wykrojnika'])) // sprawdza czy dane o wykrojniku są importowane z edytuj wykrojnik
-{	
-	$id_wykrojnika = $_GET['id_wykrojnika']; // odczytujemy id wykrojnika
+<?php
+if(isset($_GET['id_wykrojnik'])) // sprawdza czy dane o wykrojniku są importowane z edytuj wykrojnik
+{
+	$id_wykrojnik = $_GET['id_wykrojnik']; // odczytujemy id wykrojnika
 	require_once "../include/connect.php";
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 		if ($polaczenie->connect_errno!=0)
@@ -9,11 +9,11 @@ if(isset($_GET['id_wykrojnika'])) // sprawdza czy dane o wykrojniku są importow
 			echo "Error: ".$polaczenie->connect_errno;
 		}
 		else
-		{	
+		{
 			$rezultat = @$polaczenie->query("SELECT * FROM wykrojniki ORDER BY id ASC"); // szukamy w bazie wykrojnika o id
 			while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
 				{
-					if($wiersz['id']==$id_wykrojnika)
+					if($wiersz['id']==$id_wykrojnik)
 						{
 							$_SESSION['dimension_x']=$wiersz['dimension_x']; // zapisujemy do sesji
 							$_SESSION['dimension_y'] =$wiersz['dimension_y'];
@@ -43,9 +43,9 @@ if(isset($_GET['id_wykrojnika'])) // sprawdza czy dane o wykrojniku są importow
 								<?php echo '<input name="reps"  placeholder=" '.$_SESSION['reps'].'"><br />';?>
 								<label>Promień</label><br />
 								<?php echo '<input name="radius"  placeholder=" '.$_SESSION['radius'].'"><br />';?>
-								<input id="submit" name="submit" type="submit" value="Zmien"> 
+								<input id="submit" name="submit" type="submit" value="Zmien">
 							</form>
-<?php																			
+<?php
 						}
 				}
 		}
@@ -54,5 +54,4 @@ if(isset($_GET['id_wykrojnika'])) // sprawdza czy dane o wykrojniku są importow
 {
 	echo 'gdy id wykrojnika jest nie znane';
 }
-?>						
-	
+?>

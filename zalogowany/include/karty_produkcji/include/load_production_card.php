@@ -71,7 +71,7 @@ if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GE
 				$_SESSION['end_date'] = '';//$wiersz['end_date'];
 				$_SESSION['date_of_insertion'] = date('Y-m-d'); //date dodania ustawiamy na aktualną date('Y-m-d');
 				$_SESSION['ip_autor'] = $_SERVER['REMOTE_ADDR'];//identyfikacja ip
-			//	header ('Location: ?menuadmin=karta_produkcji&id_wykrojnika='.$wiersz['id_wykrojnik'].'');
+			//	header ('Location: ?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id_wykrojnik'].'');
 
 				// obliczamy i ustawiamy pozostałe zmienne:
 				// $_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
@@ -81,7 +81,7 @@ if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GE
 				//$_SESSION['date_of_edition'] = '';
 				//$_SESSION['id_autora'] ;
 
-				//$_GET['id_wykrojnika']
+				//$_GET['id_wykrojnik']
 			}
 			// $id =$_SESSION['id_wykrojnik'];
 
@@ -97,7 +97,7 @@ if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GE
 				// $_SESSION['number_of_teeth'] = $wiersz['number_of_teeth'];
 				// $_SESSION['uzytkow'] = $wiersz['uzytkow'];;
 				// $_SESSION['reps'] = $wiersz['reps'];
-				// $_SESSION['radius'] = $wiersz['radius'];  "?menuadmin=edytuj_wykrojnik&id_wykrojnika='.$wiersz['id'].'"
+				// $_SESSION['radius'] = $wiersz['radius'];  "?menuadmin=edytuj_wykrojnik&id_wykrojnik='.$wiersz['id'].'"
 			// }
 
 		}

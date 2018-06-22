@@ -16,7 +16,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-dismiss="modal">Nie</button>
         <?php echo '<a href="include/karta_produkcji/zapis.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" name="submit" type="submit" value=" Zamów ">Tak</a>';?>
-    <?php //echo '<a href="?menuadmin=karta_produkcji&id='.$_SESSION['id'].'&id_wykrojnika='.$_SESSION['id_wykrojnik'].'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" name="submit" type="submit" value=" Zamów ">Tak</a>';
+    <?php //echo '<a href="?menuadmin=karta_produkcji&id='.$_SESSION['id'].'&id_wykrojnik='.$_SESSION['id_wykrojnik'].'" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" name="submit" type="submit" value=" Zamów ">Tak</a>';
         ?>
       </div>
     </div>

@@ -41,7 +41,7 @@ $_SESSION['invoice_number'] = '';// $wiersz['nr_faktury'];
 $_SESSION['end_date'] = '';//$wiersz['end_date'];
 //odczytujemy dane wykrojnika
 $_SESSION['id_wykrojnik'] = $wiersz['id_wykrojnik'];
-//header ('Location: ?menuadmin=karta_produkcji&id_wykrojnika='.$wiersz['id_wykrojnik'].'');
+//header ('Location: ?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id_wykrojnik'].'');
 //$polaczenie->close();
 // require_once "../include/connect.php";
 // $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);

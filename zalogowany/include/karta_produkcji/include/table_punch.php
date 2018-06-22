@@ -18,10 +18,10 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 					echo '<div class="col"><b>Ilość zębów</b></div>';
 					echo '<div class="col"><b>Użytków</b></div>';
 					echo '<div class="col"><b>Powtórzeń</b></div>';
-					if(isset($_GET['id_wykrojnika'])) // sprawdza czy dane o wykrojniku są importowane z zakładki wykrojniki
-						{	$id_wykrojnika = $_GET['id_wykrojnika']; // odczytujemy id wykrojnika
+					if(isset($_GET['id_wykrojnik'])) // sprawdza czy dane o wykrojniku są importowane z zakładki wykrojniki
+						{	$id_wykrojnik = $_GET['id_wykrojnik']; // odczytujemy id wykrojnika
 
-							$rezultat = @$polaczenie->query("SELECT * FROM wykrojniki WHERE id=$id_wykrojnika"); //
+							$rezultat = @$polaczenie->query("SELECT * FROM wykrojniki WHERE id=$id_wykrojnik"); //
 							while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
 								{
 									echo '<div class="dimension_x">'.$wiersz['dimension_x'].'</div>'; //wyświetlamy record "dimension_x"
@@ -35,7 +35,7 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 									echo '<div class="reps"> '.$wiersz['reps'].'</div>';
 									$_SESSION['reps']=$wiersz['reps'];
 
-									$_SESSION['id_wykrojnik']=$id_wykrojnika; //przenosimy do sesji pozostałe dane wybranego wykrojnika
+									$_SESSION['id_wykrojnik']=$id_wykrojnik; //przenosimy do sesji pozostałe dane wybranego wykrojnika
 									$_SESSION['form']=$wiersz['form'];
 									$_SESSION['raw_material']=$wiersz['raw_material'];
 									$_SESSION['radius']=$wiersz['radius'];

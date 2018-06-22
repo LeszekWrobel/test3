@@ -25,10 +25,10 @@
 				$rezultat =@$polaczenie->query("SELECT * FROM karty_produkcji WHERE kod_karty_prod LIKE '%$a%' AND nazwa_wytw LIKE '%$b%' AND nazwa_wzoru LIKE '%$c%' AND kod_ean LIKE '%$d%' ORDER BY termin_realizacji DESC");
 				while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
 					{
-						echo '<a href="?menuadmin=karta_produkcji&zmienne=restart&mode=edit&id='.$wiersz['id'].'&id_wykrojnika='.$wiersz['id_wykrojnik'].'" style="background-color: rgb(216, 254, 214)"><div class="kod_karty_prod">';
+						echo '<a href="?menuadmin=karta_produkcji&zmienne=restart&mode=edit&id='.$wiersz['id'].'&id_wykrojnik='.$wiersz['id_wykrojnik'].'" style="background-color: rgb(216, 254, 214)"><div class="kod_karty_prod">';
 						include 'include/color_order_date.php'; //koloraowanie zamówien w/g data $_SESSION['mode']='edit';
 						echo'</div></a>';
-						//href="index.php?menuadmin=podgl_edycja_kp&id='.$id.'&zmienne=restart&id_wykrojnika='.$id_wykrojnika.'"
+						//href="index.php?menuadmin=podgl_edycja_kp&id='.$id.'&zmienne=restart&id_wykrojnik='.$id_wykrojnik.'"
 						// echo '<a value="'.$wiersz['id'].'" role="button" class="btn btn-link" data-toggle="modal"  style="background-color: rgb(216, 254, 214)" data-target="#modal_window">';
 						// 	echo '<div class="kod_karty_prod">'; //btn-rgb(216, 254, 214)
 						// 		include 'include/color_order_date.php'; //koloraowanie zamówien w/g data

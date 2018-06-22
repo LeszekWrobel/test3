@@ -46,9 +46,9 @@
 							echo '<td><div class="uzytkow"> '.$wiersz['uzytkow'].'</div></td>';
 							echo '<td><div class="reps"> '.$wiersz['reps'].'</div></td>';
 							echo '<td><div class="radius"> '.$wiersz['radius'].'</div></td>';
-							echo '<td><div class="choice"> <a href="?menuadmin=karta_produkcji&id_wykrojnika='.$wiersz['id'].'"><button type="button" class="btn btn-success">Wybierz</button>
+							echo '<td><div class="choice"> <a href="?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id'].'"><button type="button" class="btn btn-success">Wybierz</button>
 </a></div></td>' ;
-							echo '<td><div class="edit"> <a href="?menuadmin=edytuj_wykrojnik&id_wykrojnika='.$wiersz['id'].'"><button type="button" class="btn btn-warning">Edytuj</button></a></div></td>' ;
+							echo '<td><div class="edit"> <a href="?menuadmin=edytuj_wykrojnik&id_wykrojnik='.$wiersz['id'].'"><button type="button" class="btn btn-warning">Edytuj</button></a></div></td>' ;
 							?></tr><?php
 						}
 						?>
