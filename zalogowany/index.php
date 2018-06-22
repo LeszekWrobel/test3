@@ -74,7 +74,7 @@ if ((empty($login)) OR (empty($haslo)))
 										case 'zamowienia_drukarki_edycja':
 								   {
 										include('include/zamowienia/include/drukarki/save_table_order_printers.php');
-									 }
+									}
 									break;
 							case 'zamowienia_przewijarki':
 						   {

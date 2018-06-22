@@ -17,7 +17,13 @@ main {
   padding: 0;
   border: 2px solid #ccc;
 }
+.center{
+  /* width: 100%; */
+  margin: 1px auto;
+ float: right;
+  text-align: center;
 
+}
 #baner>img {
   width: 100%;
   margin-left: auto;
@@ -211,16 +217,16 @@ ul>li>a {
   margin: 1px auto;
 }
 
-.search {
+ .search {
   padding: 1px;
-  margin: 1px;
+  margin: 1px auto;
   float: left;
   /* border: 2px solid #ccc; */
 }
 
 .search_prod {
   padding: 1px;
-  margin: 1px;
+  margin: 1px auto;
   float: left;
   border: 2px solid #ccc;
 }
@@ -262,7 +268,13 @@ ul>li>a {
   margin: 1px auto;
   /*  border: 2px solid #ccc;*/
 }
-
+/* dla karty Produkcji*/
+.search_form{
+  padding: 1px;
+  margin: 1px auto;
+  float: left;
+  border: 2px solid #ccc;
+}
 /* #ogloszenia form img:hover
 {
     -webkit-transform: scale(2.1); /* all webkit
