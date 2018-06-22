@@ -50,7 +50,14 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 									$tak = '<img src="include/zamowienia/include/drukarki/img/checked_off.jpg" height="20px"></src>';
 								}else
 								{
-									$tak = '<input id="submit" name="submit" type="submit" value="Tak"></input>';
+									// <!-- <input id="submit" class="btn btn-danger btn-block" data-toggle="modal" data-target="#zpiz" value=" Zmień, Przelicz i Zapisz "> -->
+								 // <!-- Button trigger modal -->
+								 // <!-- <a class="btn btn-primary" href="#drukarki" role="button">Link</a> -->
+									// <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#drukarki">
+									//  Launch demo modal
+								 // </button>
+
+									$tak = '<input name="submit" type="button" value="Tak"  data-toggle="modal" data-target="#drukarki"></input>';
 									echo '<div class="rzecz_ilosc_mat">';
 									echo '<form method="post" action="">';
 									echo '<input name="id" type="hidden" value="'.$wiersz['id'].'">';
