@@ -56,12 +56,13 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 									// <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#drukarki">
 									//  Launch demo modal
 								 // </button>
-								 // $tak = '<input id="submit" name="submit" type="submit" value="Tak"></input>';// tak działa bez modali
-								 $tak = '<button  name="submit" type="submit" value="'.$wiersz['id'].'"  data-toggle="modal" data-target="#drukarki"></button>';
+								  $tak = '<input id="submit" name="submit" type="submit" value="Tak"></input>';// tak działa bez modali
+								 //$tak = '<button  name="submit" type="button" value="'.$wiersz['id'].'"  data-toggle="modal" data-target="#drukarki"></button>';
 								//	$tak = '<input name="button" type="button" value="Tak"  data-toggle="modal" data-target="#drukarki" ></input>';
 									echo '<div class="rzecz_ilosc_mat">';
 									echo '<form method="post" action="">';
 									echo '<input name="id" type="hidden" value="'.$wiersz['id'].'">';
+									echo '<input name="kod_karty_prod" type="hidden" value="'.$wiersz['kod_karty_prod'].'">';
 									echo '<input name="actual_amount_of_material_used" size="10" placeholder=" '.$_SESSION['actual_amount_of_material_used'].'"></input>';
 									echo '</div>'; // wpisuje drukarz
 								}
