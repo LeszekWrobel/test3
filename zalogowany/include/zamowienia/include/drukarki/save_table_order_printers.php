@@ -24,7 +24,6 @@
 					if ($polaczenie->query("UPDATE karty_produkcji SET rzeczywista_ilosc_mat=$rzecz_ilosc_mat WHERE id=$id_zamowienia"))
 						{
 							$yes = 'Wykonanie zamówienia <big>>'.$kod_karty_prod.'<</big> zostało potwierdzone na stanowisku drukarki.<br>Wpisano wartość <big>>'.$rzecz_ilosc_mat.'<</big> w polu "Rzeczywista ilość materiału"';
-
 							include $katalogskr.'/include/yes.html.php';
 						}
 						else

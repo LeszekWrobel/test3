@@ -1,10 +1,11 @@
 <?php
 if  (isset($_POST['submit_invoice']) && $_POST['submit_invoice'] =='Tak')
-	{	
-	
+	{
+
 	$id_zamowienia = $_POST['id'];
 		if (isset($_POST['invoice_number']) && isset($_POST['id']) && ($_POST['invoice_number'] != ''))
 			{
+				$nazwa_wytw = $_POST['nazwa_wytw'];
 				$invoice_number = $_POST['invoice_number'];
 				$_POST['invoice_number'] = strip_tags(trim($_POST['invoice_number']));
 				$invoice_number = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_POST['invoice_number']);
@@ -12,16 +13,16 @@ if  (isset($_POST['submit_invoice']) && $_POST['submit_invoice'] =='Tak')
 				if(!(preg_match ($sprawdz_tekst,$invoice_number)))
 				{
 					$error = 'Wypełnij poprawnie pole "Faktura".';
-					include $katalogskr.'/include/error.html.php'; 
+					include $katalogskr.'/include/error.html.php';
 					//include 'form_completed.php'
 					//exit;
-				} else 
+				} else
 				{
 					require_once "../include/connect.php";
 					$polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
 						if ($polaczenie->query("UPDATE karty_produkcji SET nr_faktury='$invoice_number' WHERE id=$id_zamowienia"))
 							{
-								$yes = 'Wystawienie faktury zostało potwierdzone.';
+								$yes = 'Wystawienie faktury nr <big>>'.$invoice_number.'<</big> dla <big>>'.$nazwa_wytw.'<</big> zostało potwierdzone.';
 								include $katalogskr.'/include/yes.html.php';
 							}
 							else
@@ -33,11 +34,11 @@ if  (isset($_POST['submit_invoice']) && $_POST['submit_invoice'] =='Tak')
 			else
 			{
 				$error = 'Wypełnij poprawnie pole "Faktura".';
-				include $katalogskr.'/include/error.html.php'; 
+				include $katalogskr.'/include/error.html.php';
 			}
-	}		
+	}
 /*if  (isset($_POST['submit_date']) && $_POST['submit_date'] =='Tak')
-	{	
+	{
 		$id_zamowienia = $_POST['id'];
 			if (isset($_POST['end_date']) && isset($_POST['id']) && ($_POST['end_date'] != '0') && ($_POST['end_date'] != '') && ($_POST['id'] != ''))
 			{
@@ -52,7 +53,7 @@ if  (isset($_POST['submit_invoice']) && $_POST['submit_invoice'] =='Tak')
 					else
 				{
 					throw new Exception($polaczenie->error);
-				}	
+				}
 			}
 			else
 			{
