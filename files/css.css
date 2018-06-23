@@ -198,6 +198,9 @@ ul>li>a {
 }
 
 /*dla karta produkcji */
+.kod_karty_prod{
+  font-size: 0.7em;
+}
 
 #contents {
   padding: 1px;

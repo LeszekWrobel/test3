@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="css/custom.css" >
 <link rel="stylesheet" href="css/custom.scss" >
 <?php echo'<link rel="stylesheet" href="'.$link.'/'.$katalog.'/files/css.css">';?>
+<?php echo'<link rel="stylesheet" href="'.$link.'/'.$katalog.'/files/scss.scss">';?>
 <meta name="robots" content="noindex," />
 <meta name="author" content="Leszek Wróbel" />
 <meta name="company" content="" />
