@@ -51,7 +51,7 @@ if ((empty($login)) OR (empty($haslo)))
 					case 'zamowienia':
 				   {
 						include('include/karty_produkcji/include/search.php');
-?>				
+?>
 						<div style="clear:both"></div>
 <?php
 						include('include/zamowienia/menu_zamowienia.php');
@@ -92,7 +92,6 @@ if ((empty($login)) OR (empty($haslo)))
 				   {
 						include('include/karty_produkcji/include/search.php');
 ?>
-						Lista kart produkcji
 						<div style="clear:both"></div>
 <?php
 						include('include/karty_produkcji/list_of_produktion_cards.php');

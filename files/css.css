@@ -17,13 +17,7 @@ main {
   padding: 0;
   border: 2px solid #ccc;
 }
-.center{
-  /* width: 100%; */
-  margin: 1px auto;
- float: right;
-  text-align: center;
 
-}
 #baner>img {
   width: 100%;
   margin-left: auto;
@@ -196,7 +190,12 @@ ul>li>a {
   text-align: center;
   border: 2px solid #ccc;
 }
-
+.center{
+  /* width: 100%; */
+  margin: 1px auto;
+ float: right;
+  text-align: center;
+}
 /*dla karta produkcji */
 .kod_karty_prod{
   font-size: 0.8em;
@@ -278,6 +277,7 @@ ul>li>a {
   margin: 1px auto;
   float: left;
   border: 2px solid #ccc;
+  margin-right: 25px;
 }
 /* #ogloszenia form img:hover
 {

@@ -1,5 +1,11 @@
 <div class="center">
 	<div class="search_form">
+		<?php	echo '<a class="btn btn-primary" style="margin: 4px;" href="index.php?menuadmin=karta_produkcji&zmienne_ini=clear" role="button">Czysta karta</a>';
+		?>
+		<?php	echo '<a class="btn btn-primary" style="margin: 4px;" href = "index.php?menuadmin=karta_produkcji&zmienne=restart&id_wykrojnik='.$_SESSION['id_wykrojnik'].'" role="button">Edycja karty</a>';
+		?>
+	</div>
+	<div class="search_form">
 		<form method="post" action="">
 			<div class="search">   <label>KOD</label>
 			<?php echo '<input name="search_kod_karty_prod" size="11%" placeholder=" '.$_SESSION['search_kod_karty_prod'].'" >';?></div>
