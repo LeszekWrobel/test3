@@ -1,20 +1,15 @@
 <div class="col-md-12 ">
-	<div class="row">
-		<div class="col-md-1 ">
-
-<?php
-			echo '<a class="btn btn-primary" href="index.php?menuadmin=karta_produkcji&zmienne_ini=clear" role="button">Czyść kartę</a>';
+	<div class="row pt-1">
+		<div class="col-md-1 pl-2 pr-4 mr-2">
+<?php	echo '<a class="btn btn-primary" href="index.php?menuadmin=karta_produkcji&zmienne_ini=clear" role="button">Czysta karta</a>';
 			?>
-
-
 			</div>
-				<div class="col-md-1">
+			<div class="col-md-1">
 
-<?php				echo '<a class="btn btn-primary" href = "index.php?menuadmin=karta_produkcji&zmienne=restart&id_wykrojnik='.$_SESSION['id_wykrojnik'].'" role="button">Edytuj kartę</a>';
+<?php	echo '<a class="btn btn-primary" href = "index.php?menuadmin=karta_produkcji&zmienne=restart&id_wykrojnik='.$_SESSION['id_wykrojnik'].'" role="button">Edycja karty</a>';
 ?>
-
 		</div>
-		<div class="col-md-10">
+		<div class="col-md-9">
 <?php
 if (isset($_POST['submit']) && ($_POST['submit']) ===' Szukaj ')
 { // Form has been submitted
@@ -36,6 +31,6 @@ else
 	include 'form.php';
 }
 ?>
-</div>
-</div>
+		</div>
+	</div>
 </div>

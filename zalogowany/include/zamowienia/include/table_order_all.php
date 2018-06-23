@@ -22,7 +22,7 @@
 				$b=$_SESSION['search_nazwa_wytw'];
 				$c=$_SESSION['search_nazwa_wzoru'];
 				$d=$_SESSION['search_kod_ean'];
-				
+
 				$rezultat =@$polaczenie->query("SELECT * FROM karty_produkcji WHERE kod_karty_prod LIKE '%$a%' AND nazwa_wytw LIKE '%$b%' AND nazwa_wzoru LIKE '%$c%' AND kod_ean LIKE '%$d%' ORDER BY termin_realizacji DESC");
 				while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
 					{
@@ -44,8 +44,8 @@
 ?>
 			</div>
 <?php
-			echo '<a class="btn btn-primary mr-2" href="index.php?menuadmin=karta_produkcji&zmienne_ini=clear" role="button">Czyść kartę</a>';
-			echo '<a class="btn btn-primary" href = "index.php?menuadmin=karta_produkcji&zmienne=restart&id_wykrojnik='.$_SESSION['id_wykrojnik'].'" role="button">Edytuj kartę</a>';
+			echo '<a class="btn btn-primary mr-2" href="index.php?menuadmin=karta_produkcji&zmienne_ini=clear" role="button">Czyta karta</a>';
+			echo '<a class="btn btn-primary" href = "index.php?menuadmin=karta_produkcji&zmienne=restart&id_wykrojnik='.$_SESSION['id_wykrojnik'].'" role="button">Edycja karty</a>';
 	}
 	$polaczenie->close();
 ?>
