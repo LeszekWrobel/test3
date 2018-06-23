@@ -1,3 +1,13 @@
+<div class="col-md-12 ">
+	<div class="row">
+		<div class="col-md-2 offset-md-1">
+			<div class="row-md-10 mt-2">
+				<a href = "index.php?menuadmin=dodaj_wykrojnik">
+					<button type="button" class="btn btn-success btn-block">
+					 Dodaj wykrojnik
+					</button></a>
+			</div>
+		</div>
 <?php
 if (isset($_POST['submit']) && ($_POST['submit']) ==='Szukaj')
 { // zapis zmiennych do wyszukiwania
@@ -20,3 +30,5 @@ else
 	include 'form_punch.php';
 }
 ?>
+	</div>
+</div>
