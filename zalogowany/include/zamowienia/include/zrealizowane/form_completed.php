@@ -29,8 +29,9 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 					while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
 						{
 							echo '<div class="kod_karty_prod">';
+							echo '<a href="?menuadmin=karta_produkcji&zmienne=restart&mode=edit&id='.$wiersz['id'].'&id_wykrojnik='.$wiersz['id_wykrojnik'].'" style="background-color: rgb(216, 254, 214)">';
 							include 'include/color_order_date.php'; //koloraowanie zamówien w/g data
-							echo'</div>';
+							echo'</a></div>';
 							echo '<div class="nazwa_wytw"> '.$wiersz['nazwa_wytw'].'</div>';
 							echo '<div class="nazwa_wzoru"> '.$wiersz['nazwa_wzoru'].'</div>';
 							echo '<div class="ilosc_do_realizacji"> '.$wiersz['ilosc_do_realizacji'].'</div>';
