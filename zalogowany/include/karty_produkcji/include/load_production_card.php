@@ -39,9 +39,6 @@
 				$_SESSION['wymiar_y_do'] = 1000;
 				$_SESSION['wymiar_y_od'] = '';
 				$_SESSION['circulation'] = $wiersz['ilosc_do_realizacji'];
-				//$_SESSION['termin'] = '';//   $wiersz['termin_realizacji']; =date_of_completion ???
-
-
 				$_SESSION['raw_material_lenght'] = '';// $wiersz['dlugosc_materialu']; //zerujemy a poniżej wyliczamy ze wzoru
 				$_SESSION['form_material_width'] = '';
 				$_SESSION['material_width'] = $wiersz['zalecana_szer_mat'];
@@ -66,35 +63,7 @@
             $_SESSION['date_of_completion'] = '';// termin realizacji w trybie tworzenia nowej karty produkcji
           }
 				$_SESSION['ip_autor'] = $_SERVER['REMOTE_ADDR'];//identyfikacja ip
-			//	header ('Location: ?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id_wykrojnik'].'');
-
-				// obliczamy i ustawiamy pozostałe zmienne:
-				// $_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
-				// $_SESSION['raw_material_lenght']=round($_SESSION['raw_material_lenght'],2);
-				// $_SESSION['number_of_rolls']=$_SESSION['circulation']*1000/$_SESSION['quantity_er'];   //ilość rolek
-				// $_SESSION['number_of_rolls']=ceil($_SESSION['number_of_rolls']);
-				//$_SESSION['date_of_edition'] = '';
-				//$_SESSION['id_autora'] ;
-
-				//$_GET['id_wykrojnik']
 			}
-			// $id =$_SESSION['id_wykrojnik'];
-
-			// $rezultat = @$polaczenie->query("SELECT * FROM wykrojniki WHERE id=$id ");
-			// while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
-			// {
-				//WYKROJNIKI
-
-				// $_SESSION['dimension_x'] = $wiersz['dimension_x'];
-				// $_SESSION['dimension_y'] = $wiersz['dimension_y'];
-				// $_SESSION['form'] = $wiersz['form'];
-				// $_SESSION['raw_material'] = $wiersz['raw_material'];
-				// $_SESSION['number_of_teeth'] = $wiersz['number_of_teeth'];
-				// $_SESSION['uzytkow'] = $wiersz['uzytkow'];;
-				// $_SESSION['reps'] = $wiersz['reps'];
-				// $_SESSION['radius'] = $wiersz['radius'];  "?menuadmin=edytuj_wykrojnik&id_wykrojnik='.$wiersz['id'].'"
-			// }
-
 		}
 
 	$polaczenie->close();

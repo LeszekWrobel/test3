@@ -41,17 +41,6 @@ $_SESSION['invoice_number'] = '';// $wiersz['nr_faktury'];
 $_SESSION['end_date'] = '';//$wiersz['end_date'];
 //odczytujemy dane wykrojnika
 $_SESSION['id_wykrojnik'] = $wiersz['id_wykrojnik'];
-//header ('Location: ?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id_wykrojnik'].'');
-//$polaczenie->close();
-// require_once "../include/connect.php";
-// $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
-//   if ($polaczenie->connect_errno!=0)
-//   {
-//     echo "Error: ".$polaczenie->connect_errno;
-//   }
-//   else
-//   {
-
 print 'Sid='.$id=$_SESSION['id_wykrojnik'];
 //SELECT * FROM pierwsza INNER JOIN druga WHERE id.pierwsza = id.druga
      $rezultat =@$polaczenie->query("SELECT * FROM wykrojniki WHERE id=$id");
@@ -66,9 +55,6 @@ print 'Sid='.$id=$_SESSION['id_wykrojnik'];
 				 $_SESSION['reps'] = $wiersz['reps'];
 				 $_SESSION['radius'] = $wiersz['radius'];
       }
-//print $_SESSION['dimension_y'].'lllllllllllooooppp';
-  // }
-  // 	$polaczenie->close();
 // obliczamy i ustawiamy pozostałe zmienne:
 $_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
 $_SESSION['raw_material_lenght']=round($_SESSION['raw_material_lenght'],2);
