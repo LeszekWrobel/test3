@@ -4,101 +4,108 @@ if (isset($_POST['submit']) && $_POST['submit'] ===" Zmień, Przelicz i Zapisz "
      // sprawdzamy ustawienia obowiązkowych pól formularzy karty produkcji.
   if ((isset($_SESSION['kod_karty_prod']))&&($_SESSION['kod_karty_prod']=='')&&($_POST['kod_karty_prod']==''))
       {
-        $error[]='Wypełnij prawidłowo pole "KOD".';
+        $error[]=' KOD,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['nazwa_wytw']))&&($_SESSION['nazwa_wytw']==='')&&($_POST['nazwa_wytw']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "WYTWÓRNIA".';
+        $error[]=' KLIENT,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['nazwa_wzoru']))&&($_SESSION['nazwa_wzoru']==='')&&($_POST['nazwa_wzoru']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "WZÓR".';
+        $error[]=' WZÓR,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['kod_ean']))&&($_SESSION['kod_ean']==='')&&($_POST['kod_ean']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "EAN".';
+        $error[]=' EAN,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['kolor']))&&($_SESSION['kolor']===''))
       {
-        $error[]='Wybierz kolory.';
+        $error[]=' Kolory,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['uzytkow']))&&($_SESSION['uzytkow']===''))//uzytki w wykrojniki
       {
-        $error[]='Wybierz wykrojnik.';
+        $error[]=' Wykrojnik,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((!isset($_SESSION['number_of_teeth']))&&($_SESSION['number_of_teeth']==='')&&($_POST['number_of_teeth']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "Ilość zębów".';
+        $error[]=' Ilość zębów,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['reps']))&&($_SESSION['reps']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "Powtórzeń".';
+        $error[]=' Powtórzeń,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['material_width']))&&($_SESSION['material_width']==='')&&($_POST['material_width']===''))
       {
-        $error[]='Podaj prawidłową ilość materiału.';
+        $error[]=' Zalecana szerokość materiału,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['paper']))&&($_SESSION['paper']==='')&&($_POST['paper']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "Papier".';
+        $error[]=' Papier,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['glue'] ))&&($_SESSION['glue']==='')&&($_POST['glue']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "Klej".';
+        $error[]=' Klej,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['quantity_er']))&&($_SESSION['quantity_er']==='')&&($_POST['quantity_er']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "Ilość e/r".';
+        $error[]= ' Ilość e/r,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['bush']))&&($_SESSION['bush']==='')&&($_POST['bush']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "Tulejka".';
+        $error[]=' Tulejka,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['ilosc_uzytkow']))&&($_SESSION['ilosc_uzytkow']==='')&&($_POST['ilosc_uzytkow']===''))
       {
-        $error[]='Wypełnij prawidłowo pole "Ilość użytków".';
+        $error[]=' Ilość użytków,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['direction_roll']))&&($_SESSION['direction_roll']===''))
       {
-        $error[]='Uzupełnij kierunek nawoju';
+        $error[]=' Kierunek nawoju,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['comments_to_order']))&&($_SESSION['comments_to_order']==='')&&($_POST['comments_to_order']===''))
       {
-        $error[]='Pole "Uwagi" jest puste.';
+        $error[]=' Uwagi,';
         //include $katalogskr.'/include/error.html.php';
       }
   if ((isset($_SESSION['print_report']))&&($_SESSION['print_report']==='')&&($_POST['print_report']===''))
       {
-        $error[]='Pole "Raportu wydruku" jest puste.';
+        $error[]=' Raportu wydruku,';
         //include $katalogskr.'/include/error.html.php';
       }
   //  $_SESSION['error'] = $error; //zapis błędów do zmiennej sesyjnej
   if ((isset($error)) && $error != '')
       {
-          foreach($error as $value) // wyświetlenie zapisanych w tablicy kolorów
-          {
-            if($value!='' ) // aby seperatory nie były wyświetlane gdy polo koloru jest puste
+  ?>    <div style="margin: 0 20px 0 20px;">
+          <p style="color: red; font-weight: bold; margin: 5px; border: 2px solid red;">
+    <span style="text-decoration: underline; text-alighn: right;">UWAGA !!! </span><br>
+    Następujące pola karty produkcji pozostają nie wypełnione :
+<?php       foreach($error as $value) // wyświetlenie zapisanych w tablicy kolorów
             {
-              $error = $value.'<br /> '; // separator kolorów
-              include $katalogskr.'/include/error.html.php';
-            }
-          }
-      }else{//button zatwierdzający dane do zamówienia
+              if($value!='' ) // aby seperatory nie były wyświetlane gdy polo koloru jest puste
+              {
+                $error = $value.' '; // separator kolorów
+                print $error;
+                //include $katalogskr.'/include/error.html.php';
+              }
+            } ?>
+          </p>
+        </div>
+<?php  }else{//button zatwierdzający dane do zamówienia
         $yes='Wprowadzone dane zostały zapisane i przeliczone';
         include $katalogskr.'/include/yes.html.php';?>
         <div class="col-md-2 offset-md-5 mb-4">

@@ -5,7 +5,7 @@
   	 <?php echo '<input type="text" class="form-control" id="formGroupExampleInput" name="kod_karty_prod"  placeholder=" '.$_SESSION['kod_karty_prod'].'" >';   ?>
   </div>
   <div class="col-md-12">
-    <div class="text-light bg-secondary">WTWÓRNIA</div>
+    <div class="text-light bg-secondary">KLIENT</div>
   </div>
   <div class="col-md-12">
   	 <?php echo '<input type="text" class="form-control" id="formGroupExampleInput" name="nazwa_wytw"  placeholder=" '.$_SESSION['nazwa_wytw'].'" >';   ?>

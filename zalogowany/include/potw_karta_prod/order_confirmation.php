@@ -29,7 +29,7 @@ $kolory=$_SESSION['kolor'];$grafika=$_SESSION['link_img'];$uwagi=$_SESSION['comm
 										if ($polaczenie->query("UPDATE karty_produkcji SET kod_karty_prod='$kod_karty_prod',nazwa_wytw='$nazwa_wytw',nazwa_wzoru='$nazwa_wzoru',kod_ean=$kod_ean,material='$material',klej='$klej',id_wykrojnik=$id_wykrojnik,ilosc_zebow=$ilosc_zebow,nawoj='$nawoj',ilosc_er=$quantity_er,tulejka=$bush,dl_rolki=$roll_length,ilosc_rolek=$ilosc_rolek,ilosc_uzytkow=$ilosc_uzytkow,zalecana_szer_mat=$zalecana_szer_mat,dlugosc_materialu=$dlugosc_materialu,ilosc_do_realizacji=$ilosc_do_realizacji,termin_realizacji='$termin_realizacji',kolory='$string',grafika='$grafika',uwagi='$uwagi',raport_druku='$raport_druku',data_aktualizacji='$data_aktualizacji',id_autora=$id_autora,ip_autora='$ip_autora' WHERE id=$id "))
 										{
 											include 'include/ini_session_variables.php'; // kasowanie zmiennych do ustawień startowych
-											header('Location: ?menuadmin=zamowienia_wszystkie&yes=Zmiany w zamówieniu zostały zapisane.');
+											header('Location: ?menuadmin=zamowienia_wszystkie&yes=Zmiany w zamówieniu karty o kodzie "'.$kod_karty_prod.'" zostały zapisane.');
 										}
 										else
 										{
@@ -41,7 +41,7 @@ $kolory=$_SESSION['kolor'];$grafika=$_SESSION['link_img'];$uwagi=$_SESSION['comm
 										if ($polaczenie->query("INSERT INTO karty_produkcji (id,kod_karty_prod,nazwa_wytw,nazwa_wzoru,kod_ean,material,klej,id_wykrojnik,ilosc_zebow, nawoj,ilosc_er,tulejka,dl_rolki,ilosc_rolek,ilosc_uzytkow,zalecana_szer_mat,dlugosc_materialu,ilosc_do_realizacji,termin_realizacji,kolory,grafika,uwagi,raport_druku,data_dodania,data_aktualizacji,id_autora,ip_autora) VALUES (NULL,'$kod_karty_prod','$nazwa_wytw','$nazwa_wzoru',$kod_ean,'$material','$klej',$id_wykrojnik,$ilosc_zebow,'$nawoj',$quantity_er,$bush,$roll_length,$ilosc_rolek,$ilosc_uzytkow,$zalecana_szer_mat,$dlugosc_materialu,$ilosc_do_realizacji,'$termin_realizacji','$string','$grafika','$uwagi','$raport_druku','$data_dodania','$data_aktualizacji',$id_autora,'$ip_autora')"))
 										{
 											include 'include/ini_session_variables.php'; // kasowanie zmiennych do ustawień startowych
-											header('Location: ?menuadmin=zamowienia_wszystkie&yes=Zamówienie zostało dodane.');
+											header('Location: ?menuadmin=zamowienia_wszystkie&yes=Zamówienie karty o kodzie "'.$kod_karty_prod.'" zostało dodane.');
 										}
 										else
 										{
