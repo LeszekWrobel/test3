@@ -23,7 +23,7 @@ $_SESSION['ilosc_kolorow'] = $i ; // zapisanie ilości kolorów do sesji
 //print $_SESSION['ilosc_kolorow'];
 $_SESSION['direction_roll'] = $wiersz['nawoj'];
 $_SESSION['circulation'] = $wiersz['ilosc_do_realizacji'];
-$_SESSION['termin'] = '';//   $wiersz['termin_realizacji'];
+//$_SESSION['termin'] = '';//   $wiersz['termin_realizacji'];=date_of_completion ???
 $_SESSION['date_of_completion'] = '';//  $wiersz['termin_realizacji'];
 $_SESSION['raw_material_lenght'] = '';// $wiersz['dlugosc_materialu']; //zerujemy a poniżej wyliczamy ze wzoru
 $_SESSION['form_material_width'] = '';

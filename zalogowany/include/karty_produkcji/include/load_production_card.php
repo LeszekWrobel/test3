@@ -1,23 +1,13 @@
 <?php
- if(isset($_GET['zmienne_ini']) && $_GET['zmienne_ini'] === 'clear')
-{
-	include 'include/ini_session_variables.php'; //czyszczenie zmiennych sesyjnych
-}
+ if (isset($_GET['zmienne_ini']) && $_GET['zmienne_ini'] === 'clear'){include 'include/ini_session_variables.php'; //czyszczenie zmiennych sesyjnych
+ }
  if (isset($_GET['mode']) && $_GET['mode'] === 'edit'){$_SESSION['mode'] = 'edit';}
-//if ($_SESSION['mode']==='edit')
-// 	{
-// 		$yes='<small>Tryb podglądu i edycji</small>';
-// 		include $katalogskr.'/include/yes.html.php';
-// 	}else{}
-if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GET['zmienne'] === 'restart')
-	{
-		// nadpisanie zmiennych sesyjnych zmiennymi z bazy po kliknięciu na numer karty produkcji w celu wykonania kopi zamówienia jako nowego do realizcji
+ if (isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GET['zmienne'] === 'restart')
+	{	// nadpisanie zmiennych sesyjnych zmiennymi z bazy po kliknięciu na numer karty produkcji w celu wykonania kopi zamówienia jako nowego do realizcji
 		require_once "../include/connect.php";
 		$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 	if ($polaczenie->connect_errno!=0)
-		{
-			echo "Error: ".$polaczenie->connect_errno;
-		}
+		{echo "Error: ".$polaczenie->connect_errno;}
 		else
 		{
 			$id =$_GET['id'];
@@ -43,25 +33,21 @@ if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GE
 				  {  $i++;  }
 				}
 				$_SESSION['ilosc_kolorow'] = $i ; // zapisanie ilości kolorów do sesji
-				//print $_SESSION['ilosc_kolorow'];
-				//$_POST['kolor'] = '';
 				$_SESSION['direction_roll'] = $wiersz['nawoj'];
-				// $_SESSION['wymiar_x_od'] = '';
-				// $_SESSION['wymiar_x_do'] = '';
-				// $_SESSION['wymiar_y_do'] = '';
-				// $_SESSION['wymiar_y_od'] = '';
+				$_SESSION['wymiar_x_od'] = '';
+				$_SESSION['wymiar_x_do'] = 1000;
+				$_SESSION['wymiar_y_do'] = 1000;
+				$_SESSION['wymiar_y_od'] = '';
 				$_SESSION['circulation'] = $wiersz['ilosc_do_realizacji'];
-				$_SESSION['termin'] = '';//   $wiersz['termin_realizacji'];
+				//$_SESSION['termin'] = '';//   $wiersz['termin_realizacji']; =date_of_completion ???
 
-				$_SESSION['date_of_completion'] = '';//  $wiersz['termin_realizacji'];
+
 				$_SESSION['raw_material_lenght'] = '';// $wiersz['dlugosc_materialu']; //zerujemy a poniżej wyliczamy ze wzoru
 				$_SESSION['form_material_width'] = '';
 				$_SESSION['material_width'] = $wiersz['zalecana_szer_mat'];
 				$_SESSION['link_img'] = $wiersz['grafika'];
 				$_SESSION['comments_to_order'] = $wiersz['uwagi'];
 				$_SESSION['print_report'] = $wiersz['raport_druku'];
-				$_SESSION['date_of_insertion'] = '';//  $wiersz['data_dodania'];
-				$_SESSION['date_of_edition'] = '';//  $wiersz['data_aktualizacji'];
 				$_SESSION['id_wykrojnik'] = $wiersz['id_wykrojnik'];
 				//$_SESSION['id_autora'] = $wiersz['id_autora'];
 				$_SESSION['number_of_rolls'] = '';//  $wiersz['ilosc_rolek'];//zerujemy a poniżej wyliczamy ze wzoru
@@ -69,7 +55,16 @@ if(isset($_GET['id'])  && $_GET['id'] != '' && (isset($_GET['zmienne'])) && $_GE
 				$_SESSION['scrolled_amount'] = '';//  = $wiersz['ilosc_przewinieta'];
 				$_SESSION['invoice_number'] = '';// $wiersz['nr_faktury'];
 				$_SESSION['end_date'] = '';//$wiersz['end_date'];
-				$_SESSION['date_of_insertion'] = date('Y-m-d'); //date dodania ustawiamy na aktualną date('Y-m-d');
+        if ($_SESSION['mode']==='edit')
+          {
+          	$_SESSION['date_of_completion'] = $wiersz['termin_realizacji'];// termin realizacji w trybie edycji pozostaje odczytany z bazy
+            $_SESSION['date_of_edition'] = date('Y-m-d');//  $wiersz['data_aktualizacji'];
+//zapis danych do bazy w trybie edycji karty produkcji
+          }else{
+            $_SESSION['date_of_insertion'] = '';//  $wiersz['data_dodania']; zerowanie wartości przed wprowadzeniem nowej
+            $_SESSION['date_of_insertion'] = date('Y-m-d'); //date dodania nowej karty ustawiamy na aktualną date('Y-m-d');
+            $_SESSION['date_of_completion'] = '';// termin realizacji w trybie tworzenia nowej karty produkcji
+          }
 				$_SESSION['ip_autor'] = $_SERVER['REMOTE_ADDR'];//identyfikacja ip
 			//	header ('Location: ?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id_wykrojnik'].'');
 
