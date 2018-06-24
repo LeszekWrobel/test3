@@ -1,6 +1,10 @@
 <?php
  if (isset($_GET['zmienne_ini']) && ($_GET['zmienne_ini'] === 'czysc'))
- {   include 'include/ini_session_variables.php'; }//czyszczenie zmiennych sesyjnych
+ {//czyszczenie zmiennych sesyjnych
+   $zmienne_ini = '';
+   $_GET['zmienne_ini']='';//czyszczenie zmiennej wywołującej
+   include 'include/ini_session_variables.php';
+ }
  if (isset($_GET['mode']) && ($_GET['mode'] === 'edit')){$_SESSION['mode'] = 'edit';}
  if (isset($_GET['id']) && ($_GET['id'] != '') && (isset($_GET['zmienne'])) && ($_GET['zmienne'] === 'restart'))
 	{	// nadpisanie zmiennych sesyjnych zmiennymi z bazy po kliknięciu na numer karty produkcji w celu wykonania kopi zamówienia jako nowego do realizcji

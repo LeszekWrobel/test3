@@ -1,12 +1,13 @@
 <!--Skrypt zapisuje wszystkie dane zamówienia do bazy -->
 <?php
-if ((isset($_SESSION['kod_karty_prod'])&&($_SESSION['kod_karty_prod']) !='')&&(isset($_SESSION['nazwa_wytw'])&&($_SESSION['nazwa_wytw']) !='')&&(isset($_SESSION['nazwa_wzoru'])&&($_SESSION['nazwa_wzoru']) !='')&&(isset($_SESSION['kod_ean']))&&($_SESSION['kod_ean']!='')&&(isset($_SESSION['circulation'])&&($_SESSION['circulation']) !='')&&(isset($_SESSION['paper'])&&($_SESSION['paper']) !='')&&(isset($_SESSION['glue'] ))&&($_SESSION['glue']!='')&&(isset($_SESSION['ilosc_uzytkow']))&&($_SESSION['ilosc_uzytkow']!='')&&(isset($_SESSION['material_width'])&&($_SESSION['material_width']) !='')&&(isset($_SESSION['date_of_completion'])&&($_SESSION['date_of_completion']) !='')&&(isset($_SESSION['comments_to_order'])&&($_SESSION['comments_to_order']) !='')&&(isset($_SESSION['kolor'])&&($_SESSION['kolor']) !='')&&(isset($_SESSION['number_of_teeth'])&&($_SESSION['number_of_teeth']) !='')&&(isset($_SESSION['bush'])&&($_SESSION['bush']) !='')&&(isset($_SESSION['quantity_er'])&&($_SESSION['quantity_er']) !='')&&(isset($_SESSION['direction_roll'])&&($_SESSION['direction_roll']) !='')&&(isset($_SESSION['uzytkow'])&&($_SESSION['uzytkow']) !='')) // sprawdzamy ustawienia obowiązkowych pól formularzy
+if ((isset($_SESSION['kod_karty_prod'])&&($_SESSION['kod_karty_prod']) !='')&&(isset($_SESSION['nazwa_wytw'])&&($_SESSION['nazwa_wytw']) !='')&&(isset($_SESSION['nazwa_wzoru'])&&($_SESSION['nazwa_wzoru']) !=''))
+//&&(isset($_SESSION['kod_ean']))&&($_SESSION['kod_ean']!='')&&(isset($_SESSION['circulation'])&&($_SESSION['circulation']) !='')&&(isset($_SESSION['paper'])&&($_SESSION['paper']) !='')&&(isset($_SESSION['glue'] ))&&($_SESSION['glue']!='')&&(isset($_SESSION['ilosc_uzytkow']))&&($_SESSION['ilosc_uzytkow']!='')&&(isset($_SESSION['material_width'])&&($_SESSION['material_width']) !='')&&(isset($_SESSION['date_of_completion'])&&($_SESSION['date_of_completion']) !='')&&(isset($_SESSION['comments_to_order'])&&($_SESSION['comments_to_order']) !='')&&(isset($_SESSION['kolor'])&&($_SESSION['kolor']) !='')&&(isset($_SESSION['number_of_teeth'])&&($_SESSION['number_of_teeth']) !='')&&(isset($_SESSION['bush'])&&($_SESSION['bush']) !='')&&(isset($_SESSION['quantity_er'])&&($_SESSION['quantity_er']) !='')&&(isset($_SESSION['direction_roll'])&&($_SESSION['direction_roll']) !='')&&(isset($_SESSION['uzytkow'])&&($_SESSION['uzytkow']) !='')) // sprawdzamy ustawienia obowiązkowych pól formularzy
 {	// obliczamy i ustawiamy pozostałe zmienne
 	$id = $_SESSION['id'];
-	$_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
-	$_SESSION['raw_material_lenght']=round($_SESSION['raw_material_lenght'],2);
-	$_SESSION['number_of_rolls']=$_SESSION['circulation']*1000/$_SESSION['quantity_er'];   //ilość rolek
-	$_SESSION['number_of_rolls']=ceil($_SESSION['number_of_rolls']);
+	// $_SESSION['raw_material_lenght']=($_SESSION['circulation']/$_SESSION['uzytkow'])*($_SESSION['number_of_teeth']*3.175/$_SESSION['reps'])+($_SESSION['ilosc_kolorow']*25)+40;   // długość materiału
+	// $_SESSION['raw_material_lenght']=round($_SESSION['raw_material_lenght'],2);
+	// $_SESSION['number_of_rolls']=$_SESSION['circulation']*1000/$_SESSION['quantity_er'];   //ilość rolek
+	// $_SESSION['number_of_rolls']=ceil($_SESSION['number_of_rolls']);
  if ($_SESSION['mode']==='edit')
 		{
 			$_SESSION['date_of_edition'] = date('Y-m-d'); //date edycji ustawiamy na aktualną date('Y-m-d') w trybie edycji istniejącej karty;
@@ -22,15 +23,16 @@ if ((isset($_SESSION['kod_karty_prod'])&&($_SESSION['kod_karty_prod']) !='')&&(i
 $kod_karty_prod=$_SESSION['kod_karty_prod'];$nazwa_wytw=$_SESSION['nazwa_wytw'];$nazwa_wzoru=$_SESSION['nazwa_wzoru'];$kod_ean=$_SESSION['kod_ean'];$material=$_SESSION['paper'];$klej=$_SESSION['glue'];$id_wykrojnik=$_SESSION['id_wykrojnik'];$ilosc_zebow=$_SESSION['number_of_teeth'];$nawoj=$_SESSION['direction_roll'];
 $quantity_er=$_SESSION['quantity_er'];$bush=$_SESSION['bush'];$roll_length=$_SESSION['roll_length'];$ilosc_rolek=$_SESSION['number_of_rolls'];$ilosc_uzytkow=$_SESSION['ilosc_uzytkow'];$zalecana_szer_mat=$_SESSION['material_width'];$dlugosc_materialu=$_SESSION['raw_material_lenght'];$ilosc_do_realizacji=$_SESSION['circulation'];$termin_realizacji=$_SESSION['date_of_completion'];
 $kolory=$_SESSION['kolor'];$grafika=$_SESSION['link_img'];$uwagi=$_SESSION['comments_to_order'];$raport_druku=$_SESSION['print_report'];$data_dodania=$_SESSION['date_of_insertion'];$data_aktualizacji=$_SESSION['date_of_edition'];$id_autora=$_SESSION['id_autora'];$ip_autora=$_SESSION['ip_autor'];
+							if (isset($kolory) && ($kolory != ''))
+							{
 								$string = implode (",",$kolory);  // zapisanie kolorów w stringu z separatorem "," jako zmienna $string
-//klej='$klej',id_wykrojnik=$id_wykrojnik,ilosc_zebow=$ilosc_zebow,nawoj=$nawoj,ilosc_er=$quantity_er,tulejka=$bush,
+							}else{$kolory='';}
 								if ($_SESSION['mode']==='edit')
 							 		{//zapis danych do bazy w trybie edycji karty produkcji
 										if ($polaczenie->query("UPDATE karty_produkcji SET kod_karty_prod='$kod_karty_prod',nazwa_wytw='$nazwa_wytw',nazwa_wzoru='$nazwa_wzoru',kod_ean=$kod_ean,material='$material',klej='$klej',id_wykrojnik=$id_wykrojnik,ilosc_zebow=$ilosc_zebow,nawoj='$nawoj',ilosc_er=$quantity_er,tulejka=$bush,dl_rolki=$roll_length,ilosc_rolek=$ilosc_rolek,ilosc_uzytkow=$ilosc_uzytkow,zalecana_szer_mat=$zalecana_szer_mat,dlugosc_materialu=$dlugosc_materialu,ilosc_do_realizacji=$ilosc_do_realizacji,termin_realizacji='$termin_realizacji',kolory='$string',grafika='$grafika',uwagi='$uwagi',raport_druku='$raport_druku',data_aktualizacji='$data_aktualizacji',id_autora=$id_autora,ip_autora='$ip_autora' WHERE id=$id "))
 										{
 											include 'include/ini_session_variables.php'; // kasowanie zmiennych do ustawień startowych
 											header('Location: ?menuadmin=zamowienia_wszystkie&yes=Zmiany w zamówieniu karty o kodzie "'.$kod_karty_prod.'" zostały zapisane.');
-
 										}
 										else
 										{
@@ -39,11 +41,10 @@ $kolory=$_SESSION['kolor'];$grafika=$_SESSION['link_img'];$uwagi=$_SESSION['comm
 							 		}
 									else
 									{ //zapis danych do bazy w trybie tworzenia nowej karty produkcji
-										if ($polaczenie->query("INSERT INTO karty_produkcji (id,kod_karty_prod,nazwa_wytw,nazwa_wzoru,kod_ean,material,klej,id_wykrojnik,ilosc_zebow, nawoj,ilosc_er,tulejka,dl_rolki,ilosc_rolek,ilosc_uzytkow,zalecana_szer_mat,dlugosc_materialu,ilosc_do_realizacji,termin_realizacji,kolory,grafika,uwagi,raport_druku,data_dodania,data_aktualizacji,id_autora,ip_autora) VALUES (NULL,'$kod_karty_prod','$nazwa_wytw','$nazwa_wzoru',$kod_ean,'$material','$klej',$id_wykrojnik,$ilosc_zebow,'$nawoj',$quantity_er,$bush,$roll_length,$ilosc_rolek,$ilosc_uzytkow,$zalecana_szer_mat,$dlugosc_materialu,$ilosc_do_realizacji,'$termin_realizacji','$string','$grafika','$uwagi','$raport_druku','$data_dodania','$data_aktualizacji',$id_autora,'$ip_autora')"))
+										if ($polaczenie->query("INSERT INTO karty_produkcji (id,kod_karty_prod,nazwa_wytw,nazwa_wzoru,kod_ean,material,klej,id_wykrojnik,ilosc_zebow, nawoj,ilosc_er,tulejka,dl_rolki,ilosc_rolek,ilosc_uzytkow,zalecana_szer_mat,dlugosc_materialu,ilosc_do_realizacji,termin_realizacji,kolory,grafika,uwagi,raport_druku,data_dodania,id_autora,ip_autora) VALUES (NULL,'$kod_karty_prod','$nazwa_wytw','$nazwa_wzoru',$kod_ean,'$material','$klej',$id_wykrojnik,$ilosc_zebow,'$nawoj',$quantity_er,$bush,$roll_length,$ilosc_rolek,$ilosc_uzytkow,$zalecana_szer_mat,$dlugosc_materialu,$ilosc_do_realizacji,'$termin_realizacji','$string','$grafika','$uwagi','$raport_druku','$data_dodania',$id_autora,'$ip_autora')"))
 										{
 											include 'include/ini_session_variables.php'; // kasowanie zmiennych do ustawień startowych
 											header('Location: ?menuadmin=zamowienia_wszystkie&yes=Zamówienie karty o kodzie "'.$kod_karty_prod.'" zostało dodane.');
-
 										}
 										else
 										{
