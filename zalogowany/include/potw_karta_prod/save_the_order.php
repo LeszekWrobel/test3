@@ -1,5 +1,5 @@
 <?php
-include 'include/karty_produkcji/include/load_production_card.php';// kasowanie zmiennych i ładowanie danych starego zamówienia z bazy
+//include 'include/karty_produkcji/include/load_production_card.php';// kasowanie zmiennych i ładowanie danych starego zamówienia z bazy
 
 if (isset($_POST['submit']) && ($_POST['submit']) =='Potwierdz')
 { // Form has been submitted

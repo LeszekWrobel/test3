@@ -4,9 +4,11 @@
    $zmienne_ini = '';
    $_GET['zmienne_ini']='';//czyszczenie zmiennej wywołującej
    include 'include/ini_session_variables.php';
+   header ('Location: ?menuadmin=karta_produkcji');//kasowanie zmiennych przesłanych w adresie http
  }
  if (isset($_GET['mode']) && ($_GET['mode'] === 'edit')){$_SESSION['mode'] = 'edit';}
  if (isset($_GET['id']) && ($_GET['id'] != '') && (isset($_GET['zmienne'])) && ($_GET['zmienne'] === 'restart'))
+
 	{	// nadpisanie zmiennych sesyjnych zmiennymi z bazy po kliknięciu na numer karty produkcji w celu wykonania kopi zamówienia jako nowego do realizcji
 		require_once "../include/connect.php";
 		$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
@@ -70,5 +72,6 @@
 			}
 		}
 	$polaczenie->close();
+  header ('Location: ?menuadmin=karta_produkcji&id_wykrojnik='.$_GET['id_wykrojnik'].'');//kasowanie zmiennych przesłanych w adresie http
 	}
 ?>

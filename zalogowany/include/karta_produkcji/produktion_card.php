@@ -78,7 +78,7 @@
             </div>
           </div>
           <div class="col-md-4 offset-md-4 mt-3 mb-2">
-             <input id="submit" class="btn btn-danger btn-block " name="submit" type="submit" value=" Zmień, Przelicz i Zapisz ">
+             <input  id="submit" class="btn btn-danger btn-block " name="submit" type="submit" href="index.php?menuadmin=karta_produkcji" value=" Zmień, Przelicz i Zapisz ">
           </div>
           </form>
         </div>
