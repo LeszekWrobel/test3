@@ -23,9 +23,10 @@
 			$_SESSION = array();*/
 			/*// zniszczenie sesji
 			session_destroy();*/
+
 			$yes = '<br>Zostałeś wylogowany.<br>';
 			include 'include/yes.html.php';
-			echo '<a href="zalogowany/index.php">Logowanie</a>';
+			echo '<a style="margin-left:25px" href="zalogowany/index.php">Logowanie</a>';
 			?>
 		</div> <!-- div admin koniec-->
 	</body>
