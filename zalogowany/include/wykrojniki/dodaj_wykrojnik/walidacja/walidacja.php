@@ -6,6 +6,7 @@ $nr = '1';		 $dimension_x = ''; $dimension_y = '';	 $form  = '';	 $raw_material 
 $_SESSION['dimension_x'] = strip_tags(trim($_SESSION['dimension_x']));
 $_SESSION['dimension_y'] = strip_tags(trim($_SESSION['dimension_y']));
 $_SESSION['form'] = strip_tags(trim($_SESSION['form']));
+$_SESSION['form_link'] = strip_tags(trim($_SESSION['form_link']));
 $_SESSION['raw_material'] = strip_tags(trim($_SESSION['raw_material']));
 $_SESSION ['number_of_teeth'] = strip_tags(trim($_SESSION['number_of_teeth']));
 $_SESSION ['uzytkow'] = strip_tags(trim($_SESSION['uzytkow']));
@@ -20,6 +21,7 @@ $_SESSION['data_aktualizacji'] = strip_tags(trim($_SESSION['data_aktualizacji'])
 $dimension_x = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_SESSION['dimension_x']);
 $dimension_y = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_SESSION['dimension_y']);
 $form = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_SESSION['form']);
+$form_link = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_SESSION['form_link']);
 $raw_material = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_SESSION['raw_material']);
 $number_of_teeth = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_SESSION['number_of_teeth']);
 $uzytkow = preg_replace(array('/\s{2,}/', '/[\t\n]/'), ' ', $_SESSION['uzytkow']);

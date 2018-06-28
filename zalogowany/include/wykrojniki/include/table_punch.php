@@ -27,29 +27,57 @@
 			</thead>
 			<tbody>
 <?php
-
 	 $a=$_SESSION['wymiar_x_od'];
 	 $b=$_SESSION['wymiar_x_do'];
 	 $c=$_SESSION['wymiar_y_od'];
 	 $d=$_SESSION['wymiar_y_do'];
-	// $rezultat =@$polaczenie->query("SELECT * FROM karty_produkcji WHERE kod_karty_prod LIKE '%$a%' AND nazwa_wytw LIKE '%$b%' AND nazwa_wzoru LIKE '%$c%' AND kod_ean LIKE '%$d%' ORDER BY termin_realizacji DESC");
-
 					$rezultat = @$polaczenie->query("SELECT * FROM wykrojniki WHERE (dimension_x >= '$a') AND (dimension_x <= '$b') AND (dimension_y >= '$c') AND (dimension_y <= '$d') ORDER BY dimension_x ASC"); //
 					while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
 						{
 							?><tr><?php
 							echo '<td><div class="dimension_x">'.$wiersz['dimension_x'].'</div></td>';
 							echo '<td><div class="dimension_y"> '.$wiersz['dimension_y'].'</div></td>';
-							echo '<td><div class="form"> '.$wiersz['form'].'</div></td>';
+?>
+							<td>
+								<div class="form">
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+									<?php	echo $wiersz['form']; ?>
+					  		</div>
+							</td>
+							</button>
+<?php
 							echo '<td><div class="raw_material"> '.$wiersz['raw_material'].'</div></td>';
 							echo '<td><div class="number_of_teeth"> '.$wiersz['number_of_teeth'].'</div></td>';
 							echo '<td><div class="uzytkow"> '.$wiersz['uzytkow'].'</div></td>';
 							echo '<td><div class="reps"> '.$wiersz['reps'].'</div></td>';
 							echo '<td><div class="radius"> '.$wiersz['radius'].'</div></td>';
-							echo '<td><div class="choice"> <a href="?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id'].'"><button type="button" class="btn btn-success btn-sm">Wybierz</button>
+							echo '<td><div class="choice"> <a href="?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id'].'"><button type="button" class="btn btn-success">Wybierz</button>
 </a></div></td>' ;
-							echo '<td><div class="edit"> <a href="?menuadmin=edytuj_wykrojnik&id_wykrojnik='.$wiersz['id'].'"><button type="button" class="btn btn-warning btn-sm">Edytuj</button></a></div></td>' ;
-							?></tr><?php
+							echo '<td><div class="edit"> <a href="?menuadmin=edytuj_wykrojnik&id_wykrojnik='.$wiersz['id'].'"><button type="button" class="btn btn-warning">Edytuj</button></a></div></td>' ;
+							?></tr>
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<?php   echo '<img style="width: 100%" src="../img/punch/'.$wiersz['form_link'].'">';?>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+								<!-- Modal END -->
+							<?php
 						}
 						?>
 			</tbody>
