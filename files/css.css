@@ -1,0 +1,434 @@
+html {
+  margin: 0 auto;
+  padding: 0;
+  border: 2px solid #ccc;
+}
+
+body {
+  width: 100%;
+  margin: 0px auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 140%;
+  border: 2px solid #ccc;
+}
+
+main {
+  margin: 1px auto;
+  padding: 0;
+  border: 2px solid #ccc;
+}
+
+#baner>img {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #ccc;
+}
+
+#baner {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  border: 2px solid #ccc;
+}
+
+#menuadmin a>img {
+  width: 45%;
+  padding: 1%;
+  border: 2px solid #ccc;
+}
+
+#menu_order {
+  margin: 0% auto;
+  border: 2px solid #ccc;
+}
+
+#menu_order ul {
+  margin: 1%;
+  padding: 0px:
+}
+
+textarea {
+  font-size: 100%;
+  width: 90%;
+}
+
+/* .btn {
+    background: red;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 80%;
+    color: white;
+    margin: 1%;
+    padding: 1%;
+		border-radius: 15px;
+		cursor: pointer;
+}
+
+.btn:hover {
+    background: red;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 90%;
+    color: white;
+    margin: 1%;
+    padding: 1%;
+		border-radius: 15px;
+		cursor: pointer;
+} */
+
+#menu_order ul>li {
+  /* float: left;
+	min-width: 50px; */
+  /* height: 25px;
+	font-size: 18px;*/
+  padding: 1%;
+  border-right: 2px dotted #444444;
+  opacity: 0.9;
+  display: inline;
+  background-color: #eff35b;
+  clear: both;
+  list-style-type: none;
+  width: 10%;
+}
+
+#menu_order ul>li:first-child {
+  border-left: 2px dotted #444444;
+}
+
+#menu_order ul>li>a {
+  text-decoration: none;
+  color: #000001;
+  font-weight: bold;
+}
+
+#menu_order li:hover {
+  background-color: #ccffcc;
+  cursor: pointer;
+}
+
+#baner_mini {
+  padding: 1%;
+  border: 2px solid #ccc;
+}
+
+/* #ogloszenia form
+{
+	margin: 1% auto;
+	border: 2px solid #ccc; */
+
+/* display: inline-block; */
+
+}
+
+#ogloszenia form label {
+  /* display:block;/* ustawiamy by label rozpoczyna� si� od nowej linii*/
+  margin-bottom: 5px;
+  /* dodajemy margines dolny */
+  font-weight: bold;
+  /* pogrubiamy czcionk� */
+  text-transform: uppercase;
+  /* zamieniamy wszystkie litery na du�e */
+  font-size: 100%;
+  /* ustawiamy wielko�� czcionki */
+  color: #555555;
+  /* ustawiamy kolor czcionki */
+}
+
+#ogloszenia form input {
+  cursor: pointer;
+  margin-bottom: 0px;
+  font-size: 75%;
+	margin-right: 1px;
+}
+
+#admin {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+  border: 2px solid #ccc;
+}
+
+/* #menuadmin
+{
+	width: 15%;
+	padding: 1% ;
+	float:left;
+	border: 2px solid #ccc;
+	font-size: 60%;
+} */
+
+ul>li>a {
+  text-decoration: none;
+  color: #000001;
+  font-weight: normal;
+  padding: 0px 0px 0px 0px;
+  letter-spacing: 0em;
+  word-spacing: 0em;
+  margin: 0 auto;
+  /*border: 2px solid #ccc;*/
+}
+
+#admin>form {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #ccc;
+}
+
+#ogloszenia {
+  padding: 1px;
+  margin: 1px auto;
+  /* float:left; */
+  width: 95%;
+  text-align: center;
+  border: 2px solid #ccc;
+}
+.center{
+  /* width: 100%; */
+  margin: 1px auto;
+ float: right;
+  text-align: center;
+}
+/*dla karta produkcji */
+.kod_karty_prod{
+  font-size: 0.8em;
+  display: inline;
+}
+
+#contents {
+  padding: 1px;
+  margin: 1px;
+  border: 2px solid #ccc;
+}
+
+#contents img {
+  padding: 1%;
+  margin: 1%;
+  width: 30%;
+  float: left;
+  border: 2px solid #ccc;
+}
+
+.submit {
+  margin: 1px auto;
+}
+
+ .search {
+  padding: 1px;
+  margin: 1px auto;
+  float: left;
+  /* border: 2px solid #ccc; */
+}
+
+.search_prod {
+  padding: 1px;
+  margin: 1px auto;
+  float: left;
+  border: 2px solid #ccc;
+}
+
+.graphics {
+  padding: 1px;
+  margin: 1px;
+  width: 65%;
+  float: right;
+  border: 2px solid #ccc;
+}
+
+.graphics>form {
+  padding: 1px;
+  margin: 1px;
+  /* float:left;	 */
+  border: 2px solid #ccc;
+}
+
+.graphics>img {
+  padding: 1px;
+  margin: 1px;
+  width: 40%;
+  border: 2px solid #ccc;
+}
+
+#graphics {
+  margin: 1px auto;
+  height: 50%;
+}
+
+#ogloszenia form img {
+  /* transition: transform 0.3s; */
+  margin: 2% auto;
+}
+
+#direction_roll {
+  display: inline-block;
+  margin: 1px auto;
+  /*  border: 2px solid #ccc;*/
+}
+/* dla karty Produkcji*/
+.search_form{
+  padding: 1px;
+  margin: 1px auto;
+  float: left;
+  border: 2px solid #ccc;
+  margin-right: 25px;
+}
+/* #ogloszenia form img:hover
+{
+    -webkit-transform: scale(2.1); /* all webkit
+    -ms-transform: scale(2.1); /* IE 9
+    -moz-transform: scale(2.1); /* firefox 15 and older
+    -o-transform: scale(2.1); /* opera 12 and older
+    transform: scale(2.1);
+} */
+
+.search_prod>img {
+  transition: transform 0.3s;
+}
+
+.table_order>img:hover {
+  -webkit-transform: scale(2.1);
+  /* all webkit */
+  -ms-transform: scale(2.1);
+  /* IE 9 */
+  -moz-transform: scale(2.1);
+  /* firefox 15 and older */
+  -o-transform: scale(2.1);
+  /* opera 12 and older */
+  transform: scale(2.1);
+}
+
+.kolory>img {
+  transition: transform 0.3s;
+}
+
+.kolory>img:hover {
+  -webkit-transform: scale(2.1);
+  /* all webkit */
+  -ms-transform: scale(2.1);
+  /* IE 9 */
+  -moz-transform: scale(2.1);
+  /* firefox 15 and older */
+  -o-transform: scale(2.1);
+  /* opera 12 and older */
+  transform: scale(2.1);
+}
+
+.col-xs, .col-md {
+  padding: 1px;
+  margin: 1px;
+  border: 2px solid #ccc;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  grid-gap: 1px;
+  background-color: #000408;
+  padding: 1px;
+  margin-bottom: 1%;
+}
+
+.grid-container5 {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 1px;
+  background-color: #000408;
+  padding: 1px;
+}
+
+.grid-container>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1px 0;
+  font-size: 0.7em;
+  /*white-space: nowrap*/
+  /* word-break: break-all; */
+}
+
+.grid-container5>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  /* padding: 1px 0; */
+  font-size: 0.7em;
+  /* white-space: nowrap*/
+  /* word-break: break-all; */
+}
+
+.order_form_grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  grid-gap: 1px;
+  background-color: #00ff00;
+  padding: 1px;
+  margin-bottom: 1.5%;
+}
+
+.order_form_grid>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1px 0;
+  font-size: 0.7em;
+  /*white-space: nowrap;*/
+  grid-gap: 1px;
+}
+
+.table_order_printers_grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-gap: 1px;
+  background-color: #00ff00;
+  padding: 1px;
+}
+
+.table_order_printers_grid>div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1px 0;
+  font-size: 0.7em;
+  /* white-space: nowrap; */
+  grid-gap: 1px;
+}
+
+#comments_and_report {
+  padding: 1px;
+  margin: 1px;
+  float: left;
+  border: 2px solid #ccc;
+  width: 98%;
+}
+
+#comments_and_report>form {
+  padding: 1px;
+  margin: 1px;
+  float: left;
+  border: 2px solid #ccc;
+  width: 48%;
+  margin-left: auto;
+  margin-right: auto;
+  */
+}
+
+/*  dla wykrojnik*/
+
+.search_x,.search_y{
+  border: 2px solid #ccc;
+  float: left;
+  padding: 6px 2px 1px 10px;
+	margin-right: 10px;
+}
+.inline-block {
+  display: inline-block;
+  /* margin: 1px auto; */
+  padding: 1px;
+}
+.button_inline_block{
+  float: left;
+  padding: 6px 2px 1px 10px;
+}
