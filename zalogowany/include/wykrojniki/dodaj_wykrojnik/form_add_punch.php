@@ -13,14 +13,11 @@
         <?php echo '<input name="raw_material"  placeholder=" '.$_SESSION['raw_material'].'"><br />';?>
         </div>
         <div class="col-sm">
-
   <?php  //FORMULARZ - START
          echo '<tr><td><input type="file" name="plik"/></td><td><br />';// grafika wykrojnika
     // STOP -formularz dodawania grafiki
          echo '<img style height="330px" src="../img/punch/'.$_SESSION['form_link'].'">';
 ?>
-
-
         </div>
         <div class="col-sm">
     	    <label>Ilość zębów</label><br />
@@ -33,11 +30,7 @@
         	<?php echo '<input name="radius"  placeholder=" '.$_SESSION['radius'].'"><br />';?>
         </div>
       </div>
-    </div>
   <input id="submit" name="submit" type="submit" value="Dodaj">
   <input id="submit" name="submit" type="submit" value="Czyść">
-
-  <!-- <a class="btn btn-primary mr-2" href="index.php?menuadmin=karta_produkcji&zmienne_ini=clear" role="button">Czyść kartę</a>
-  <a class="btn btn-primary" href = "index.php?menuadmin=karta_produkcji&zmienne=restart&id_wykrojnik='.$_SESSION['id_wykrojnik'].'" role="button">Edytuj kartę</a> -->
-
 </form>
+</div>

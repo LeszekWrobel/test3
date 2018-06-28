@@ -27,13 +27,10 @@
 			</thead>
 			<tbody>
 <?php
-
 	 $a=$_SESSION['wymiar_x_od'];
 	 $b=$_SESSION['wymiar_x_do'];
 	 $c=$_SESSION['wymiar_y_od'];
 	 $d=$_SESSION['wymiar_y_do'];
-	// $rezultat =@$polaczenie->query("SELECT * FROM karty_produkcji WHERE kod_karty_prod LIKE '%$a%' AND nazwa_wytw LIKE '%$b%' AND nazwa_wzoru LIKE '%$c%' AND kod_ean LIKE '%$d%' ORDER BY termin_realizacji DESC");
-
 					$rezultat = @$polaczenie->query("SELECT * FROM wykrojniki WHERE (dimension_x >= '$a') AND (dimension_x <= '$b') AND (dimension_y >= '$c') AND (dimension_y <= '$d') ORDER BY dimension_x ASC"); //
 					while ($wiersz = $rezultat->fetch_assoc())	//tworzymy tabele zmiennych z bazy
 						{
@@ -41,15 +38,15 @@
 							echo '<td><div class="dimension_x">'.$wiersz['dimension_x'].'</div></td>';
 							echo '<td><div class="dimension_y"> '.$wiersz['dimension_y'].'</div></td>';
 ?>
-							<td><div class="form">
-							<!-- Button trigger modal -->
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-
-<?php 				echo $wiersz['form']; ?>
-				  	</div></td>
+							<td>
+								<div class="form">
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+									<?php	echo $wiersz['form']; ?>
+					  		</div>
+							</td>
 							</button>
 <?php
-
 							echo '<td><div class="raw_material"> '.$wiersz['raw_material'].'</div></td>';
 							echo '<td><div class="number_of_teeth"> '.$wiersz['number_of_teeth'].'</div></td>';
 							echo '<td><div class="uzytkow"> '.$wiersz['uzytkow'].'</div></td>';
@@ -79,7 +76,7 @@
 									</div>
 								</div>
 							</div>
-								<!-- Modal END-->
+								<!-- Modal END -->
 							<?php
 						}
 						?>
