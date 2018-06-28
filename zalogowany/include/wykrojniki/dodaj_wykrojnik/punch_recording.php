@@ -1,10 +1,14 @@
 <?php
+if(isset($_POST['submit']) && ($_POST['submit']) == 'Czyść')
+{
+ include 'include/ini_session_variables.php'; //czyszczenie zmiennych sesyjnych
+}
 if (isset($_POST['submit']) && ($_POST['submit']) =='Dodaj')
 { // Form has been submitted
 	if ($_POST['dimension_x']!='') {$_SESSION['dimension_x'] = $_POST['dimension_x'];}
 	if ($_POST['dimension_y']!='') {$_SESSION['dimension_y'] = $_POST['dimension_y'];}
 	if ($_POST['form']!='') {$_SESSION['form'] = $_POST['form'];}
-// grafika strt
+	// grafika strt
 	if (is_uploaded_file($_FILES['plik']['tmp_name']))
 	{
 			$max_rozmiar = 3024*3024;
@@ -29,7 +33,6 @@ if (isset($_POST['submit']) && ($_POST['submit']) =='Dodaj')
 		include $katalogskr.'/include/error.html.php';
 	//	include 'form_img.php';
 	}
-	//if ($_POST['form']!='') {$_SESSION['form'] = $_POST['form'];}
 // grafika stop
 	if ($_POST['raw_material']!='') {$_SESSION['raw_material'] = $_POST['raw_material'];}
 	if ($_POST['number_of_teeth']!='') {$_SESSION['number_of_teeth'] = $_POST['number_of_teeth'];}
@@ -41,8 +44,6 @@ if (isset($_POST['submit']) && ($_POST['submit']) =='Dodaj')
 	$data_dodania = date('Y-m-d'); //date dodania ustawiamy na aktualną date('Y-m-d');
 	$id_autora=$_SESSION['id_autora'];
 	$ip_autora=$_SERVER['REMOTE_ADDR'];//identyfikacja ip
-
-		 //include("../include/connect.php");
 		require_once "../include/connect.php";
 		$polaczenie = @new mysqli($host,$db_user,$db_password,$db_name);
 					if ($polaczenie->query("INSERT INTO wykrojniki (id,nr,dimension_x,dimension_y,form,form_link,raw_material,number_of_teeth,uzytkow,reps,radius,data_dodania,id_autora,ip_autora) VALUES (NULL,$nr,$dimension_x,$dimension_y,'$form','$form_link','$raw_material',$number_of_teeth,$uzytkow,$reps,$radius,'$data_dodania',$id_autora,'$ip_autora')"))

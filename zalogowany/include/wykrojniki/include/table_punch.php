@@ -40,7 +40,16 @@
 							?><tr><?php
 							echo '<td><div class="dimension_x">'.$wiersz['dimension_x'].'</div></td>';
 							echo '<td><div class="dimension_y"> '.$wiersz['dimension_y'].'</div></td>';
-							echo '<td><div class="form"> '.$wiersz['form'].'</div></td>';
+?>
+							<td><div class="form">
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+<?php 				echo $wiersz['form']; ?>
+				  	</div></td>
+							</button>
+<?php
+
 							echo '<td><div class="raw_material"> '.$wiersz['raw_material'].'</div></td>';
 							echo '<td><div class="number_of_teeth"> '.$wiersz['number_of_teeth'].'</div></td>';
 							echo '<td><div class="uzytkow"> '.$wiersz['uzytkow'].'</div></td>';
@@ -49,7 +58,29 @@
 							echo '<td><div class="choice"> <a href="?menuadmin=karta_produkcji&id_wykrojnik='.$wiersz['id'].'"><button type="button" class="btn btn-success">Wybierz</button>
 </a></div></td>' ;
 							echo '<td><div class="edit"> <a href="?menuadmin=edytuj_wykrojnik&id_wykrojnik='.$wiersz['id'].'"><button type="button" class="btn btn-warning">Edytuj</button></a></div></td>' ;
-							?></tr><?php
+							?></tr>
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<?php   echo '<img style="width: 100%" src="../img/punch/'.$wiersz['form_link'].'">';?>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+								<!-- Modal END-->
+							<?php
 						}
 						?>
 			</tbody>
