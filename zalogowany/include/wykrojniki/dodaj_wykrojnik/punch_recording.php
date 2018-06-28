@@ -19,7 +19,7 @@ if (isset($_POST['submit']) && ($_POST['submit']) =='Dodaj')
 		} else
 		{
 			$zd = $_FILES['plik']['name'];//utworzenie nazwy pliku z grafiką
-			include ('remove_pl.php');//usuwa polskie znaki -->
+			include ('include/karta_produkcji/include/remove_pl.php');//usuwa polskie znaki -->
 			$zd = remove_pl($zd, 'utf8'); // funkcja usuwanie polskich znaków
 			move_uploaded_file($_FILES['plik']['tmp_name'],
 			$katalogskr.'/img/punch/'.$zd);
