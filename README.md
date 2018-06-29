@@ -2,8 +2,9 @@
 Zmiany w wersji z 29-06-18r:
 1.Wykrojniki -
   a) zmieniono układ formularza dla dodawania i edycji wykrojników
-  b) w spisie wykrojników dodano podgląd kształtu wykrojnika z kolumny kształt.
-2.Karta produkcji - poprawiono pole obliczane "Długość rolki". Teraz pole wyświetla długość z dokładnością do 0,00 (przedtem zaokraglano do jedności)
+  b) dodano pole do zapisu grafiki przedstawiającej kształt wykrojnika
+  c) w spisie wykrojników dodano podgląd kształtu wykrojnika z kolumny kształt.
+2.Karta produkcji - poprawiono pole obliczane "Długość rolki". Teraz pole wyświetla długość z dokładnością do 0,00 (przedtem zaokraglano do liczby całkowitej)
 
 Zmiany w wersji z 26-06-18r:
 1.Zmiany przy tworzeniu nowego zamówienia karty produkcji.
