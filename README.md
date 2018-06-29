@@ -1,5 +1,8 @@
 # test3
-Zmiany w wersji:
+Zmiany w wersji z 29-06-18r:
+1.Wykrojniki - podgląd kształtu wykrojnika z kolumny kształt.
+
+Zmiany w wersji z 26-06-18r:
 1.Zmiany przy tworzeniu nowego zamówienia karty produkcji.
   a)pozostały tylko trzy pola obowiązkowe do zapisu nowego zamówienia (KOD, KLIENT, WZÓR).
   b)przycisk zakończenia zamówienia "Zamów" pojawi się dopiero po prawidłowym zapisaniu wprowadzonych do formularza danych poprzez użycie przycisku "Zmień, Przelicz i Zapisz".
@@ -11,7 +14,7 @@ Zmiany w wersji:
     - po wylogowaniu
     - po ukończeniu procedury zapisu nowego zamówienia karty produkcji
     - po użyciu przycisku "Czysta karta"
-2.Możliwy podgląd i edycja zamówienia karty produkcji z listy na każdym etapie produkcji (wszystkie, drukarki, przewijarki, zrealizowane). 
+2.Możliwy podgląd i edycja zamówienia karty produkcji z listy na każdym etapie produkcji (wszystkie, drukarki, przewijarki, zrealizowane).
   a)Tak edytowane zamówienie karty można poprawić w każdej pozycji i zapisać zmiany.
   b)Ponieważ edycja zamówienia karty produkcji odbywa się w identycznym oknie jak przy tworzeniu nowego zamówienia karty, program powiadamia komunikatem o trybie pracy w edycji "Tryb podglądu i edycji".
   c)Procedura zapisu poprawek w edycji jest identyczna jak przy tworzeniu nowego zamówienia karty produkcji.
