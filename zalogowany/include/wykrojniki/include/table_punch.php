@@ -69,7 +69,7 @@
 																	</button>
 																</div>
 																<div class="modal-body">
-																	<?php   echo '<img src="../img/punch/'.$wiersz['form_link'].'">';?>
+																	<?php   echo '<img src="../img/punch/'.$wiersz['form_link'].'" width="300px">';?>
 																</div>
 																<div class="modal-footer">
 																	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
